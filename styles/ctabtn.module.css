@@ -1,0 +1,35 @@
+.btn {
+	position: relative;
+	appearance: none;
+	background: var(--janskunpunainen);
+	padding: 1em 2em;
+	border: none;
+	color: white;
+	font-size: 1.2em;
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+	border-radius: 100px;
+	transition: var(--transition);
+}
+.btn span {
+	position: relative;
+}
+.btn:hover {
+	transform: scale(1.2);
+}
+.btn::before {
+	--size: 0;
+	content: '';
+	position: absolute;
+	left: var(--x);
+	top: var(--y);
+	width: var(--size);
+	height: var(--size);
+	background: radial-gradient(circle closest-side, blue, transparent);
+	transform: translate(-50%, -50%);
+	transition: width .1s ease, height .1s ease;
+}
+.btn:hover:before {
+	--size: 500px;
+}

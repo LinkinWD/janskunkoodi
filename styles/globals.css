@@ -1,16 +1,50 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+	--janskunpunainen: #ff0c00;
+	--janskunvaaleanpunainen: #fcddec;
+	--transition: 0.3s all;
 }
-
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+body {
+	background: rgb(255, 226, 89);
+	background: linear-gradient(230deg, rgba(255, 226, 89, 1) 7%, rgba(255, 167, 81, 1) 28%);
+	background-position: center;
+	background-repeat: no-repeat;
+
+	font-family: 'Roboto', sans-serif;
+}
+
+section {
+	position: relative;
+	min-height: 60vh;
+}
+.watermark {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 20%;
+	min-width: 300px;
+	opacity: 0.3;
+}
+
+.tuotteet {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+}
+
+.kauppa {
+	font-family: 'Permanent Marker', cursive;
 }

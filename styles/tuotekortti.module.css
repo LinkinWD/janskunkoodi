@@ -1,0 +1,21 @@
+.card {
+	height: 400px;
+	width: 300px;
+	background: rgba(255, 255, 255, 0.2);
+	display: inline-block;
+	padding: 1em;
+	border-radius: 2em;
+	z-index: 1;
+	position: relative;
+	backdrop-filter: blur(10px);
+	border: solid 2px transparent;
+	background-clip: padding-box;
+	box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+	margin: 2em;
+}
+.title {
+	color: purple;
+	text-transform: capitalize;
+	text-align: center;
+	margin-bottom: 0.8rem;
+}
