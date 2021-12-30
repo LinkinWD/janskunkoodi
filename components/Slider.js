@@ -22,34 +22,34 @@ export default function Slider() {
 					stopOnHover={false}
 				>
 					<div className="image">
-						<Image src="/images/sliderimages/sliderimage0.jpg" alt="kuva" width={1250} height={500} />
+						<Image src="/images/sliderimages/sliderImage0.jpg" alt="kuva" width={1250} height={500} />
 					</div>
 					<div className="image">
-						<Image src="/images/sliderimages/sliderimage1.jpg" alt="kuva" width={1250} height={500} />
+						<Image src="/images/sliderimages/sliderImage1.jpg" alt="kuva" width={1250} height={500} />
 					</div>
 					<div className="image">
-						<Image src="/images/sliderimages/sliderimage2.jpg" alt="kuva" width={1250} height={500} />
+						<Image src="/images/sliderimages/sliderImage2.jpg" alt="kuva" width={1250} height={500} />
 					</div>
 					<div className="image">
-						<Image src="/images/sliderimages/sliderimage3.jpg" alt="kuva" width={1250} height={500} />
+						<Image src="/images/sliderimages/sliderImage3.jpg" alt="kuva" width={1250} height={500} />
 					</div>
 					<div className="image">
-						<Image src="/images/sliderimages/sliderimage4.jpg" alt="kuva" width={1250} height={500} />
+						<Image src="/images/sliderimages/sliderImage4.jpg" alt="kuva" width={1250} height={500} />
 					</div>
 					<div className="image">
-						<Image src="/images/sliderimages/sliderimage5.jpg" alt="kuva" width={1250} height={500} />
+						<Image src="/images/sliderimages/sliderImage5.jpg" alt="kuva" width={1250} height={500} />
 					</div>
 					<div className="image">
-						<Image src="/images/sliderimages/sliderimage6.jpg" alt="kuva" width={1250} height={500} />
+						<Image src="/images/sliderimages/sliderImage6.jpg" alt="kuva" width={1250} height={500} />
 					</div>
 					<div className="image">
-						<Image src="/images/sliderimages/sliderimage7.jpg" alt="kuva" width={1250} height={500} />
+						<Image src="/images/sliderimages/sliderImage7.jpg" alt="kuva" width={1250} height={500} />
 					</div>
 					<div className="image">
-						<Image src="/images/sliderimages/sliderimage8.jpg" alt="kuva" width={1250} height={500} />
+						<Image src="/images/sliderimages/sliderImage8.jpg" alt="kuva" width={1250} height={500} />
 					</div>
 					<div className="image">
-						<Image src="/images/sliderimages/sliderimage9.jpg" alt="kuva" width={1250} height={500} />
+						<Image src="/images/sliderimages/sliderImage9.jpg" alt="kuva" width={1250} height={500} />
 					</div>
 				</Carousel>
 			</div>
