@@ -1,0 +1,15 @@
+.slider {
+	display: none;
+	margin: 3em;
+}
+.mobileslider {
+	margin: 1em;
+}
+@media only screen and (min-width: 600px) {
+	.slider {
+		display: block;
+	}
+	.mobileslider {
+		display: none;
+	}
+}

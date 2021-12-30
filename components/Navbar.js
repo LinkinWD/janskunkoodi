@@ -32,7 +32,7 @@ export default function Navbar() {
 			</div>
 			{(toggleMenu || screenWidth > 1199) && (
 				<ul className={styled.navbarlist}>
-					<li className={styled.link}>
+					<li>
 						<Link href="/">
 							<a className={styled.navlink}>Etusivu</a>
 						</Link>
@@ -67,7 +67,7 @@ export default function Navbar() {
 							<a className={styled.navlink}>Verkkokauppa</a>
 						</Link>
 					</li>
-					<li>
+					<li className={styled.link}>
 						<Link href="/otayhteytta">
 							<a className={styled.navlink}>Ota yhteyttä</a>
 						</Link>

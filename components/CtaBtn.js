@@ -8,7 +8,7 @@ export default function CtaBtn() {
 	};
 
 	return (
-		<div>
+		<div className={styled.btncontainer}>
 			<button className={styled.btn} onMouseMove={trackMouse}>
 				<span>Tutustu palveluihin ja valikoimaamme</span>
 			</button>

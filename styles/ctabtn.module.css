@@ -1,3 +1,11 @@
+.btncontainer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 2em;
+}
+
 .btn {
 	position: relative;
 	appearance: none;
@@ -11,6 +19,7 @@
 	overflow: hidden;
 	border-radius: 100px;
 	transition: var(--transition);
+	margin: auto;
 }
 .btn span {
 	position: relative;
