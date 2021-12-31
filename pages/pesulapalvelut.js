@@ -12,7 +12,7 @@ export default function pesulapalvelut() {
 			<Otsikko otsikko={'Pesulapalvelut'} />
 			<article>
 				<div>
-					<Image src="/images/muut/vista.jpg" width={419} height={279} />
+					<Image src="/images/muut/vista.jpg" width={419} height={279} alt="vistanlogo" />
 				</div>
 				<div>
 					<p>Meiltä saat myös pesulapalveluja - voit pesettää lähes kaikki kodin tekstiilit, kutem esim.</p>
@@ -30,9 +30,7 @@ export default function pesulapalvelut() {
 					<p>Lisäksi tarjolla on pöytäliinojen ja liinavaatetekstiilien vuokrauspalvelua.</p>
 					<p>
 						Pesulapalvelut ja tekstiilien vuokrauksen toteuttaa{' '}
-						<a href="http://vistanpesula.fi/" target="_blank">
-							Vistan pesula
-						</a>
+						<a href="http://vistanpesula.fi/">Vistan pesula</a>
 					</p>
 				</div>
 			</article>

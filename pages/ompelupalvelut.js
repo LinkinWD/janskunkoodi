@@ -12,7 +12,7 @@ export default function ompelupalvelut() {
 			<Otsikko otsikko={'Ompelupalvelut'} />
 			<article>
 				<div>
-					<Image src="/images/muut/ompelu.jfif" width={419} height={279} />
+					<Image src="/images/muut/ompelu.jfif" width={419} height={279} alt="ompelukuva" />
 				</div>
 				<div>
 					<p>

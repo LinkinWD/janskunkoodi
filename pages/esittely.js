@@ -12,7 +12,7 @@ export default function esittely() {
 			<Otsikko otsikko={'Esittely'} />
 			<article>
 				<div>
-					<Image src="/images/muut/jansku_kuva.jpg" width={428} height={321} />
+					<Image src="/images/muut/jansku_kuva.jpg" width={428} height={321} alt="jaanan kuva" />
 				</div>
 				<div>
 					<p>
