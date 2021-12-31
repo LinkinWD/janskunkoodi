@@ -19,7 +19,7 @@ a {
 }
 body {
 	background: rgb(255, 226, 89);
-	background: linear-gradient(230deg, rgba(255, 226, 89, 1) 7%, rgba(255, 167, 81, 1) 28%);
+	background: linear-gradient(230deg, rgba(255, 226, 89, 1) 7%, rgba(255, 167, 81, 1) 28%, rgba(255, 226, 89, 1) 90%);
 	background-position: center;
 	background-repeat: no-repeat;
 

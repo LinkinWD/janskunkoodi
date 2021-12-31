@@ -5,7 +5,7 @@ import styled from '../styles/slider.module.css';
 import Image from 'next/image';
 
 export default function Slider() {
-	const [ intervalz, setIntervalz ] = useState(1000); //initial state here represents the interval for first image.
+	const [ intervalz, setIntervalz ] = useState(2000); //initial state here represents the interval for first image.
 
 	const onChange = (index, item) => {
 		setIntervalz(item.props['data-interval']);
@@ -20,6 +20,9 @@ export default function Slider() {
 					infiniteLoop={true}
 					showThumbs={false}
 					stopOnHover={false}
+					showArrows={false}
+					showStatus={false}
+					transitionTime={600}
 				>
 					<div className="image">
 						<Image src="/images/sliderimages/sliderImage0.jpg" alt="kuva" width={1250} height={500} />
@@ -61,6 +64,9 @@ export default function Slider() {
 					infiniteLoop={true}
 					showThumbs={false}
 					stopOnHover={false}
+					showArrows={false}
+					showStatus={false}
+					transitionTime={600}
 				>
 					<div className="image">
 						<Image src="/images/sliderimages/mobileImage0.jpg" alt="kuva" width={640} height={853} />

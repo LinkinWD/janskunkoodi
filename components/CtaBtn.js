@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import styled from '../styles/ctabtn.module.css';
+
 export default function CtaBtn() {
 	const trackMouse = (e) => {
 		const x = e.pageX - e.target.offsetLeft;
@@ -9,9 +11,11 @@ export default function CtaBtn() {
 
 	return (
 		<div className={styled.btncontainer}>
-			<button className={styled.btn} onMouseMove={trackMouse}>
-				<span>Tutustu palveluihin ja valikoimaamme</span>
-			</button>
+			<Link href="/tutustupalveluihin">
+				<button className={styled.btn} onMouseMove={trackMouse}>
+					<span>Tutustu palveluihin ja valikoimaamme</span>
+				</button>
+			</Link>
 		</div>
 	);
 }
