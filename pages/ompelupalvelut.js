@@ -10,11 +10,11 @@ export default function ompelupalvelut() {
 				<title>Ompelupalvelut</title>
 			</Head>
 			<Otsikko otsikko={'Ompelupalvelut'} />
-			<article>
-				<div>
+			<article className={styled.article}>
+				<div className={styled.div}>
 					<Image src="/images/muut/ompelu.jfif" width={419} height={279} alt="ompelukuva" />
 				</div>
-				<div>
+				<div className={styled.div}>
 					<p>
 						Teen kaikenlaiset korjausompelut ammattitaidolla. Käytössäni on useita ompelukoneita, jotka
 						mahdollistavat myös paksumpien kankaiden ompelun, kuten sohvatyynyt. Teen myös korjausompelua.

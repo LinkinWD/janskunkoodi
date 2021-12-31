@@ -10,11 +10,11 @@ export default function pesulapalvelut() {
 				<title>Pesulapalvelut</title>
 			</Head>
 			<Otsikko otsikko={'Pesulapalvelut'} />
-			<article>
-				<div>
+			<article className={styled.article}>
+				<div className={styled.div}>
 					<Image src="/images/muut/vista.jpg" width={419} height={279} alt="vistanlogo" />
 				</div>
-				<div>
+				<div className={styled.div}>
 					<p>Meiltä saat myös pesulapalveluja - voit pesettää lähes kaikki kodin tekstiilit, kutem esim.</p>
 					<ul>
 						<li>Vuodetekstiilit (myös untuvaiset)</li>

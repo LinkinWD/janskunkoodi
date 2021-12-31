@@ -10,11 +10,11 @@ export default function esittely() {
 				<title>Esittely</title>
 			</Head>
 			<Otsikko otsikko={'Esittely'} />
-			<article>
-				<div>
-					<Image src="/images/muut/jansku_kuva.jpg" width={428} height={321} alt="jaanan kuva" />
+			<article className={styled.article}>
+				<div className={styled.div}>
+					<Image src="/images/muut/janskukuva.jpg" width={428} height={321} alt="jaanan kuva" />
 				</div>
-				<div>
+				<div className={styled.div}>
 					<p>
 						Janskun Lanka ja Ompelupaja on saanut varsinaisesti alkunsa jo yli 20 vuotta sitten. Olin
 						pitkään forssalaisen Lankapisteen vakioasiakas ja kävin toisinaan myös tuuraamassa myymälässä.
