@@ -5,6 +5,8 @@ import Head from 'next/head';
 import { useState } from 'react';
 import MenuBtn from '../components/MenuBtn';
 
+/* eslint-disable */
+
 export default function langat() {
 	const [ tuotteet, setTuotteet ] = useState('kaikkiTuotteet');
 	function getUnique(lankadata, index) {
