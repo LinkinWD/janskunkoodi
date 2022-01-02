@@ -1,7 +1,7 @@
 export const lankadata = [
 	{
 		id: 1,
-		class: 'villalanka',
+		itemclass: 'villalanka',
 		title: 'faketuote',
 		img: '/images/tuotteet/lanka.jpg',
 		description:
@@ -9,7 +9,7 @@ export const lankadata = [
 	},
 	{
 		id: 2,
-		class: 'villalanka',
+		itemclass: 'villalanka',
 		title: 'faketuote2',
 		img: '/images/tuotteet/lanka.jpg',
 		description:
@@ -17,7 +17,7 @@ export const lankadata = [
 	},
 	{
 		id: 3,
-		class: 'villalanka',
+		itemclass: 'villalanka',
 		title: 'faketuote3',
 		img: '/images/tuotteet/lanka.jpg',
 		description:
@@ -25,7 +25,7 @@ export const lankadata = [
 	},
 	{
 		id: 4,
-		class: 'puuvillalanka',
+		itemclass: 'puuvillalanka',
 		title: 'faketuote4',
 		img: '/images/tuotteet/lanka.jpg',
 		description:
@@ -33,7 +33,7 @@ export const lankadata = [
 	},
 	{
 		id: 5,
-		class: 'puuvillalanka',
+		itemclass: 'puuvillalanka',
 		title: 'faketuote5',
 		img: '/images/tuotteet/lanka.jpg',
 		description:
