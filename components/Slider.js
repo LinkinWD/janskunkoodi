@@ -24,35 +24,32 @@ export default function Slider() {
 					showStatus={false}
 					transitionTime={600}
 				>
-					<div className="image">
-						<Image src="/images/sliderimages/sliderImage0.jpg" alt="kuva" width={1250} height={500} />
+					<div>
+						<Image src="/images/sliderimages/sliderImage1.jpg" alt="kuva" width={2000} height={600} />
 					</div>
-					<div className="image">
-						<Image src="/images/sliderimages/sliderImage1.jpg" alt="kuva" width={1250} height={500} />
+					<div>
+						<Image src="/images/sliderimages/sliderImage2.jpg" alt="kuva" width={2000} height={600} />
 					</div>
-					<div className="image">
-						<Image src="/images/sliderimages/sliderImage2.jpg" alt="kuva" width={1250} height={500} />
+					<div>
+						<Image src="/images/sliderimages/sliderImage3.jpg" alt="kuva" width={2000} height={600} />
 					</div>
-					<div className="image">
-						<Image src="/images/sliderimages/sliderImage3.jpg" alt="kuva" width={1250} height={500} />
+					<div>
+						<Image src="/images/sliderimages/sliderImage4.jpg" alt="kuva" width={2000} height={600} />
 					</div>
-					<div className="image">
-						<Image src="/images/sliderimages/sliderImage4.jpg" alt="kuva" width={1250} height={500} />
+					<div>
+						<Image src="/images/sliderimages/sliderImage5.jpg" alt="kuva" width={2000} height={600} />
 					</div>
-					<div className="image">
-						<Image src="/images/sliderimages/sliderImage5.jpg" alt="kuva" width={1250} height={500} />
+					<div>
+						<Image src="/images/sliderimages/sliderImage6.jpg" alt="kuva" width={2000} height={600} />
 					</div>
-					<div className="image">
-						<Image src="/images/sliderimages/sliderImage6.jpg" alt="kuva" width={1250} height={500} />
+					<div>
+						<Image src="/images/sliderimages/sliderImage7.jpg" alt="kuva" width={2000} height={600} />
 					</div>
-					<div className="image">
-						<Image src="/images/sliderimages/sliderImage7.jpg" alt="kuva" width={1250} height={500} />
+					<div>
+						<Image src="/images/sliderimages/sliderImage8.jpg" alt="kuva" width={2000} height={600} />
 					</div>
-					<div className="image">
-						<Image src="/images/sliderimages/sliderImage8.jpg" alt="kuva" width={1250} height={500} />
-					</div>
-					<div className="image">
-						<Image src="/images/sliderimages/sliderImage9.jpg" alt="kuva" width={1250} height={500} />
+					<div>
+						<Image src="/images/sliderimages/sliderImage9.jpg" alt="kuva" width={2000} height={600} />
 					</div>
 				</Carousel>
 			</div>
@@ -68,34 +65,31 @@ export default function Slider() {
 					showStatus={false}
 					transitionTime={600}
 				>
-					<div className="image">
-						<Image src="/images/sliderimages/mobileImage0.jpg" alt="kuva" width={640} height={853} />
-					</div>
-					<div className="image">
+					<div>
 						<Image src="/images/sliderimages/mobileImage1.jpg" alt="kuva" width={640} height={853} />
 					</div>
-					<div className="image">
+					<div>
 						<Image src="/images/sliderimages/mobileImage2.jpg" alt="kuva" width={640} height={853} />
 					</div>
-					<div className="image">
+					<div>
 						<Image src="/images/sliderimages/mobileImage3.jpg" alt="kuva" width={640} height={853} />
 					</div>
-					<div className="image">
+					<div>
 						<Image src="/images/sliderimages/mobileImage4.jpg" alt="kuva" width={640} height={853} />
 					</div>
-					<div className="image">
+					<div>
 						<Image src="/images/sliderimages/mobileImage5.jpg" alt="kuva" width={640} height={853} />
 					</div>
-					<div className="image">
+					<div>
 						<Image src="/images/sliderimages/mobileImage6.jpg" alt="kuva" width={640} height={853} />
 					</div>
-					<div className="image">
+					<div>
 						<Image src="/images/sliderimages/mobileImage7.jpg" alt="kuva" width={640} height={853} />
 					</div>
-					<div className="image">
+					<div>
 						<Image src="/images/sliderimages/mobileImage8.jpg" alt="kuva" width={640} height={853} />
 					</div>
-					<div className="image">
+					<div>
 						<Image src="/images/sliderimages/mobileImage9.jpg" alt="kuva" width={640} height={853} />
 					</div>
 				</Carousel>
