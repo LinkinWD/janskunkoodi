@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { palvelutJaTuotteet } from '../data';
 import PalvelutJaTuotteet from '../components/PalvelutJaTuotteet';
 import styled from '../styles/tutustupalveluihin.module.css';
+import KumppanitSlider from '../components/KumppanitSlider';
 
 export default function tutustupalveluihin() {
 	return (
@@ -16,6 +17,7 @@ export default function tutustupalveluihin() {
 					return <PalvelutJaTuotteet key={data.id} data={data} />;
 				})}
 			</div>
+			<KumppanitSlider />
 		</section>
 	);
 }

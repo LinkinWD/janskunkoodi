@@ -7,7 +7,9 @@ export default function PalvelutJaTuotteet({ data }) {
 	return (
 		<Link href={link}>
 			<article className={styled.article}>
-				<Image src={img} width={350} height={270} alt="palvelutkuva" />
+				<div className={styled.imagewrapper}>
+					<Image src={img} width={350} height={270} alt="palvelutkuva" />
+				</div>
 				<div className={styled.title_container}>
 					<h3 className={styled.title}>{title}</h3>
 				</div>
