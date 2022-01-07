@@ -1,52 +1,34 @@
 import Otsikko from '../components/Otsikko';
 import Tuotekortti from '../components/Tuotekortti';
-import { lankadata } from '../data';
+import { createClient } from 'contentful';
 import Head from 'next/head';
-import { useState } from 'react';
-import MenuBtn from '../components/MenuBtn';
 
-/* eslint-disable */
+export async function getStaticProps() {
+	const client = createClient({
+		space: process.env.CONTENTFUL_SPACE,
+		accessToken: process.env.CONTENTFUL_API
+	});
+	const res = await client.getEntries({ content_type: 'tuote' });
 
-export default function langat() {
-	const [ tuotteet, setTuotteet ] = useState('kaikkiTuotteet');
-	function getUnique(lankadata, index) {
-		const unique = lankadata
-			.map((e) => e.itemclass)
-			// store the keys of the unique objects
-			.map((e, i, final) => final.indexOf(e) === i && i)
-			// eliminate the dead keys & store unique objects
-			.filter((e) => lankadata[e])
-			.map((e) => lankadata[e]);
+	return {
+		props: {
+			tuotteet: res.items
+		}
+	};
+}
 
-		return unique;
-	}
-	let uniqueBtn = getUnique(lankadata, 'id');
-
+export default function langat({ tuotteet }) {
 	return (
 		<section>
 			<Head>
 				<title>Langat</title>
 			</Head>
 			<Otsikko otsikko={'Langat'} />
-			<div className="btncontainer">
-				<button onClick={() => setTuotteet('kaikkiTuotteet')}>Kaikki langat</button>
-
-				{uniqueBtn.map((lanka) => {
-					return <MenuBtn key={lanka.id} itemclass={lanka.itemclass} tuote={setTuotteet} />;
-				})}
-			</div>
-
-			<div className="tuotteet">
-				{tuotteet === 'kaikkiTuotteet' &&
-					lankadata.map((lanka) => {
-						return <Tuotekortti key={lanka.id} lanka={lanka} />;
-					})}
-				{lankadata.map((lanka) => {
-					if (tuotteet === lanka.itemclass) {
-						return <Tuotekortti key={lanka.id} lanka={lanka} />;
-					}
-				})}
-			</div>
+			{tuotteet.map((tuote) => {
+				if (tuote.fields.luokka === true) {
+					return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
+				}
+			})}
 		</section>
 	);
 }
