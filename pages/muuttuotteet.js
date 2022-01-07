@@ -26,7 +26,6 @@ export default function muuttuotteet({ tuotteet }) {
 			<Otsikko otsikko={'Muut tuotteet'} />
 			{tuotteet.map((tuote) => {
 				if (tuote.fields.luokka === false) {
-					console.log(tuote);
 					return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
 				}
 			})}
