@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Otsikko from '../components/Otsikko';
 import Tuotekortti from '../components/Tuotekortti';
 import { createClient } from 'contentful';
@@ -18,12 +19,28 @@ export async function getStaticProps() {
 }
 
 export default function langat({ tuotteet }) {
+	const alaluokat = [];
+	const uniikit = [];
+
 	return (
 		<section>
 			<Head>
 				<title>Langat</title>
 			</Head>
 			<Otsikko otsikko={'Langat'} />
+			<div>
+				<button>Järjestele luokkia</button>
+				{tuotteet.map((tuote) => {
+					const { alaluokka, luokka } = tuote.fields;
+					if (luokka) {
+						alaluokat.push(alaluokka);
+						if (uniikit.indexOf(alaluokka) === -1) {
+							uniikit.push(alaluokka);
+							return <button key={tuote.sys.id}>{alaluokka}</button>;
+						}
+					}
+				})}
+			</div>
 			{tuotteet.map((tuote) => {
 				if (tuote.fields.luokka === true) {
 					return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
