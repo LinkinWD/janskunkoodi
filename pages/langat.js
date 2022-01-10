@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Otsikko from '../components/Otsikko';
 import Tuotekortti from '../components/Tuotekortti';
 
@@ -22,7 +23,10 @@ export async function getStaticProps() {
 }
 
 export default function langat({ tuotteet }) {
-	const { openSidebar, isSidebarOpen, closeSidebar } = useGlobalContext();
+	const { openSidebar, isSidebarOpen, setShowProducts, showProducts } = useGlobalContext();
+	useEffect(() => {
+		setShowProducts('all');
+	}, []);
 
 	return (
 		<section>
@@ -37,8 +41,12 @@ export default function langat({ tuotteet }) {
 				</div>
 				<div className={styled.tuotteet} />
 				{tuotteet.map((tuote) => {
-					if (tuote.fields.luokka === true) {
+					if (tuote.fields.luokka === true && showProducts === 'all') {
 						return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
+					} else {
+						if (tuote.fields.alaluokka === showProducts) {
+							return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
+						}
 					}
 				})}
 			</div>

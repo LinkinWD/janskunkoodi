@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
 import { useGlobalContext } from '../context';
 import { createClient } from 'contentful';
 import Otsikko from '../components/Otsikko';
@@ -21,7 +22,10 @@ export async function getStaticProps() {
 }
 
 export default function muuttuotteet({ tuotteet }) {
-	const { openSidebar, isSidebarOpen } = useGlobalContext();
+	const { openSidebar, isSidebarOpen, showProducts, setShowProducts } = useGlobalContext();
+	useEffect(() => {
+		setShowProducts('all');
+	}, []);
 	return (
 		<div>
 			<Head>
@@ -38,6 +42,10 @@ export default function muuttuotteet({ tuotteet }) {
 				{tuotteet.map((tuote) => {
 					if (tuote.fields.luokka === false) {
 						return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
+					} else {
+						if (tuote.fields.alaluokka === showProducts) {
+							return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
+						}
 					}
 				})}
 			</div>

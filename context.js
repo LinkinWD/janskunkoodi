@@ -4,6 +4,8 @@ const AppContext = React.createContext();
 
 export const AppProvider = ({ children }) => {
 	const [ isSidebarOpen, setIsSidebarOpen ] = useState(false);
+
+	const [ showProducts, setShowProducts ] = useState('all');
 	const openSidebar = () => {
 		setIsSidebarOpen(true);
 		console.log(isSidebarOpen);
@@ -12,10 +14,11 @@ export const AppProvider = ({ children }) => {
 		setIsSidebarOpen(false);
 		console.log(isSidebarOpen);
 	};
-	const hello = 'hello';
 
 	return (
-		<AppContext.Provider value={{ isSidebarOpen, setIsSidebarOpen, openSidebar, closeSidebar, hello }}>
+		<AppContext.Provider
+			value={{ isSidebarOpen, setIsSidebarOpen, openSidebar, closeSidebar, showProducts, setShowProducts }}
+		>
 			{children}
 		</AppContext.Provider>
 	);
