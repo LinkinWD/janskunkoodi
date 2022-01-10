@@ -1,8 +1,10 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useGlobalContext } from '../context';
 import { createClient } from 'contentful';
 import Otsikko from '../components/Otsikko';
 import Tuotekortti from '../components/Tuotekortti';
+import Sidebar from '../components/Sidebar';
+import styled from '../styles/tuotteet.module.css';
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -19,23 +21,20 @@ export async function getStaticProps() {
 }
 
 export default function muuttuotteet({ tuotteet }) {
-	const [ uniikiLuokka, setUniikiLuokka ] = useState([]);
-	console.log(uniikiLuokka);
+	const { openSidebar, isSidebarOpen } = useGlobalContext();
 	return (
 		<div>
 			<Head>
 				<title>Muut tuotteet</title>
 			</Head>
 			<Otsikko otsikko={'Muut tuotteet'} />
-			<div>
-				<button>Järjestele luokkia</button>
-				{tuotteet.map((tuote) => {
-					if (tuote.fields.luokka === false && uniikiLuokka.indexOf(tuote.fields.alaluokka) === -1) {
-						setUniikiLuokka((aiemmat) => [ ...aiemmat, tuote.fields.alaluokka ]);
-					}
-				})}
+			<button onClick={openSidebar}>Järjestele luokkia</button>
+			<div className={styled.tuotteetsivu}>
+				<div className={`${isSidebarOpen ? styled.auki : styled.kiinni} ${styled.sidebar}`}>
+					<Sidebar tuotteet={tuotteet} langat={false} />
+				</div>
 			</div>
-			<div>
+			<div className={styled.tuotteet}>
 				{tuotteet.map((tuote) => {
 					if (tuote.fields.luokka === false) {
 						return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;

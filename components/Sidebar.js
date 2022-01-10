@@ -1,15 +1,31 @@
 import { useGlobalContext } from '../context';
-import styled from '../styles/sidebar.module.css';
 
-export default function Sidebar() {
-	const { isSidebarOpen, closeSidebar, hello } = useGlobalContext();
-	console.log(hello);
+export default function Sidebar({ tuotteet, langat }) {
+	const { closeSidebar } = useGlobalContext();
+	const alaluokat = [];
+	const uniikitLangat = [];
+	const uniikitMuut = [];
 	return (
-		<div className={isSidebarOpen ? styled.auki : styled.kiinni}>
-			<div className={styled.sidebar}>
-				<p className={styled.otsikko}>{hello}</p>
-				<button onClick={closeSidebar}>sulje</button>
-			</div>
+		<div>
+			<h3>sidebar</h3>
+			<button onClick={closeSidebar}>Sulje</button>
+			{tuotteet.map((tuote) => {
+				const { alaluokka, luokka } = tuote.fields;
+				if (luokka && langat === true) {
+					alaluokat.push(alaluokka);
+					if (uniikitLangat.indexOf(alaluokka) === -1) {
+						uniikitLangat.push(alaluokka);
+						return <button key={tuote.sys.id}>{alaluokka}</button>;
+					}
+				}
+				if (!luokka && langat === false) {
+					alaluokat.push(alaluokka);
+					if (uniikitLangat.indexOf(alaluokka) === -1) {
+						uniikitLangat.push(alaluokka);
+						return <button key={tuote.sys.id}>{alaluokka}</button>;
+					}
+				}
+			})}
 		</div>
 	);
 }

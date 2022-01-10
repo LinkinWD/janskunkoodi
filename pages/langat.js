@@ -1,8 +1,10 @@
 import Otsikko from '../components/Otsikko';
 import Tuotekortti from '../components/Tuotekortti';
+
 import { createClient } from 'contentful';
 import Head from 'next/head';
 import { useGlobalContext } from '../context';
+import styled from '../styles/tuotteet.module.css';
 import Sidebar from '../components/Sidebar';
 
 export async function getStaticProps() {
@@ -20,10 +22,7 @@ export async function getStaticProps() {
 }
 
 export default function langat({ tuotteet }) {
-	const { openSidebar } = useGlobalContext();
-	console.log(openSidebar);
-	const alaluokat = [];
-	const uniikit = [];
+	const { openSidebar, isSidebarOpen, closeSidebar } = useGlobalContext();
 
 	return (
 		<section>
@@ -31,25 +30,18 @@ export default function langat({ tuotteet }) {
 				<title>Langat</title>
 			</Head>
 			<Otsikko otsikko={'Langat'} />
-			<Sidebar />
-			<div>
-				<button onClick={openSidebar}>Järjestele luokkia</button>
+			<button onClick={openSidebar}>Järjestele luokkia</button>
+			<div className={styled.tuotteetsivu}>
+				<div className={`${isSidebarOpen ? styled.auki : styled.kiinni} ${styled.sidebar}`}>
+					<Sidebar tuotteet={tuotteet} langat={true} />
+				</div>
+				<div className={styled.tuotteet} />
 				{tuotteet.map((tuote) => {
-					const { alaluokka, luokka } = tuote.fields;
-					if (luokka) {
-						alaluokat.push(alaluokka);
-						if (uniikit.indexOf(alaluokka) === -1) {
-							uniikit.push(alaluokka);
-							return <button key={tuote.sys.id}>{alaluokka}</button>;
-						}
+					if (tuote.fields.luokka === true) {
+						return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
 					}
 				})}
 			</div>
-			{tuotteet.map((tuote) => {
-				if (tuote.fields.luokka === true) {
-					return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
-				}
-			})}
 		</section>
 	);
 }

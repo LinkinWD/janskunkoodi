@@ -1,0 +1,22 @@
+.tuotteetsivu {
+	transition: 1s all;
+	position: relative;
+}
+.sidebar {
+	transition: 1s all;
+	position: absolute;
+	z-index: 3;
+	background-color: white;
+}
+.tuotteet {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.kiinni {
+	transform: translateX(-101%);
+}
+.auki {
+	transform: translateX(0%);
+}
