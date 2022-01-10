@@ -1,8 +1,9 @@
-import { useState } from 'react';
 import Otsikko from '../components/Otsikko';
 import Tuotekortti from '../components/Tuotekortti';
 import { createClient } from 'contentful';
 import Head from 'next/head';
+import { useGlobalContext } from '../context';
+import Sidebar from '../components/Sidebar';
 
 export async function getStaticProps() {
 	const client = createClient({
@@ -19,6 +20,8 @@ export async function getStaticProps() {
 }
 
 export default function langat({ tuotteet }) {
+	const { openSidebar } = useGlobalContext();
+	console.log(openSidebar);
 	const alaluokat = [];
 	const uniikit = [];
 
@@ -28,8 +31,9 @@ export default function langat({ tuotteet }) {
 				<title>Langat</title>
 			</Head>
 			<Otsikko otsikko={'Langat'} />
+			<Sidebar />
 			<div>
-				<button>Järjestele luokkia</button>
+				<button onClick={openSidebar}>Järjestele luokkia</button>
 				{tuotteet.map((tuote) => {
 					const { alaluokka, luokka } = tuote.fields;
 					if (luokka) {

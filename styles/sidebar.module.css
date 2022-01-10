@@ -1,0 +1,20 @@
+.sidebar {
+	height: 200px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 40;
+	background-color: blue;
+}
+
+.auki {
+	transform: translateX(0%);
+}
+.kiinni {
+	transform: translateX(-101%);
+}
+.otsikko {
+	font-size: 2em;
+}

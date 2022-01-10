@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import CtaBtn from '../components/CtaBtn';
 import Slider from '../components/Slider';
 
