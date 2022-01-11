@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import Otsikko from '../components/Otsikko';
 import Tuotekortti from '../components/Tuotekortti';
-
 import { createClient } from 'contentful';
 import Head from 'next/head';
 import { useGlobalContext } from '../context';
@@ -18,12 +17,14 @@ export async function getStaticProps() {
 	return {
 		props: {
 			tuotteet: res.items
-		}
+		},
+		revalidate: 10
 	};
 }
 
 export default function langat({ tuotteet }) {
 	const { openSidebar, isSidebarOpen, setShowProducts, showProducts } = useGlobalContext();
+
 	useEffect(() => {
 		setShowProducts('all');
 	}, []);
@@ -34,7 +35,11 @@ export default function langat({ tuotteet }) {
 				<title>Langat</title>
 			</Head>
 			<Otsikko otsikko={'Langat'} />
-			<button onClick={openSidebar}>Järjestele luokkia</button>
+			<div className={styled.btncontainer}>
+				<button className={styled.btn} onClick={openSidebar}>
+					Järjestele luokkia
+				</button>
+			</div>
 			<div className={styled.tuotteetsivu}>
 				<div className={`${isSidebarOpen ? styled.auki : styled.kiinni} ${styled.sidebar}`}>
 					<Sidebar tuotteet={tuotteet} langat={true} />

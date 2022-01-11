@@ -17,7 +17,8 @@ export async function getStaticProps() {
 	return {
 		props: {
 			tuotteet: res.items
-		}
+		},
+		revalidate: 10
 	};
 }
 
@@ -32,7 +33,11 @@ export default function muuttuotteet({ tuotteet }) {
 				<title>Muut tuotteet</title>
 			</Head>
 			<Otsikko otsikko={'Muut tuotteet'} />
-			<button onClick={openSidebar}>Järjestele luokkia</button>
+			<div className={styled.btncontainer}>
+				<button className={styled.btn} onClick={openSidebar}>
+					Järjestele luokkia
+				</button>
+			</div>
 			<div className={styled.tuotteetsivu}>
 				<div className={`${isSidebarOpen ? styled.auki : styled.kiinni} ${styled.sidebar}`}>
 					<Sidebar tuotteet={tuotteet} langat={false} />

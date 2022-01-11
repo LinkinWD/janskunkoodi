@@ -1,4 +1,7 @@
 import { useGlobalContext } from '../context';
+import { GrClose } from 'react-icons/gr';
+
+import styled from '../styles/sidebar.module.css';
 
 export default function Sidebar({ tuotteet, langat }) {
 	const { closeSidebar, setShowProducts } = useGlobalContext();
@@ -6,10 +9,17 @@ export default function Sidebar({ tuotteet, langat }) {
 	const uniikitLangat = [];
 	const uniikitMuut = [];
 	return (
-		<div>
-			<h3>sidebar</h3>
-			<button onClick={closeSidebar}>Sulje</button>
-			<button onClick={() => setShowProducts('all')}>Näytä kaikki</button>
+		<div className={styled.sidebar}>
+			<div className={styled.header}>
+				<h3 className={styled.title}>Tuoteluokat</h3>
+				<button className={styled.closebtn} onClick={closeSidebar}>
+					<GrClose />
+				</button>
+			</div>
+			<div className={styled.main} />
+			<button className={styled.sidebarbtn} onClick={() => setShowProducts('all')}>
+				Näytä kaikki
+			</button>
 			{tuotteet.map((tuote) => {
 				const { alaluokka, luokka } = tuote.fields;
 				if (luokka && langat === true) {
@@ -17,7 +27,11 @@ export default function Sidebar({ tuotteet, langat }) {
 					if (uniikitLangat.indexOf(alaluokka) === -1) {
 						uniikitLangat.push(alaluokka);
 						return (
-							<button onClick={() => setShowProducts(alaluokka)} key={tuote.sys.id}>
+							<button
+								className={styled.sidebarbtn}
+								onClick={() => setShowProducts(alaluokka)}
+								key={tuote.sys.id}
+							>
 								{alaluokka}
 							</button>
 						);
@@ -25,9 +39,14 @@ export default function Sidebar({ tuotteet, langat }) {
 				}
 				if (!luokka && langat === false) {
 					alaluokat.push(alaluokka);
-					if (uniikitLangat.indexOf(alaluokka) === -1) {
-						uniikitLangat.push(alaluokka);
-						return <button key={tuote.sys.id}>{alaluokka}</button>;
+
+					if (uniikitMuut.indexOf(alaluokka) === -1) {
+						uniikitMuut.push(alaluokka);
+						return (
+							<button className={styled.sidebarbtn} key={tuote.sys.id}>
+								{alaluokka}
+							</button>
+						);
 					}
 				}
 			})}

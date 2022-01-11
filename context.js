@@ -8,16 +8,21 @@ export const AppProvider = ({ children }) => {
 	const [ showProducts, setShowProducts ] = useState('all');
 	const openSidebar = () => {
 		setIsSidebarOpen(true);
-		console.log(isSidebarOpen);
 	};
 	const closeSidebar = () => {
 		setIsSidebarOpen(false);
-		console.log(isSidebarOpen);
 	};
 
 	return (
 		<AppContext.Provider
-			value={{ isSidebarOpen, setIsSidebarOpen, openSidebar, closeSidebar, showProducts, setShowProducts }}
+			value={{
+				isSidebarOpen,
+				setIsSidebarOpen,
+				openSidebar,
+				closeSidebar,
+				showProducts,
+				setShowProducts
+			}}
 		>
 			{children}
 		</AppContext.Provider>
