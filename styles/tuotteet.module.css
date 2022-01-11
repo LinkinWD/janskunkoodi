@@ -1,17 +1,22 @@
 .tuotteetsivu {
 	transition: 1s all;
 	position: relative;
+	height: 100%;
 }
 .sidebar {
 	transition: 1s all;
 	position: absolute;
 	z-index: 3;
-	background-color: white;
+	min-width: 400px;
+	width: 50%;
+	height: 100%;
 }
 .tuotteet {
 	width: 100%;
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 }
 
 .kiinni {
@@ -40,4 +45,17 @@
 }
 .btn:hover {
 	transform: scale(1.1);
+}
+
+@media only screen and (min-width: 1200px) {
+	.btncontainer {
+		display: none;
+	}
+	.sidebar {
+		position: relative;
+		height: auto;
+	}
+	.kiinni {
+		transform: translateX(0%);
+	}
 }

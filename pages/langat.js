@@ -45,16 +45,17 @@ export default function langat({ tuotteet }) {
 				<div className={`${isSidebarOpen ? styled.auki : styled.kiinni} ${styled.sidebar}`}>
 					<Sidebar tuotteet={tuotteet} langat={true} />
 				</div>
-				<div className={styled.tuotteet} />
-				{tuotteet.map((tuote) => {
-					if (tuote.fields.luokka === true && showProducts === 'all') {
-						return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
-					} else {
-						if (tuote.fields.alaluokka === showProducts) {
+				<div className={styled.tuotteet}>
+					{tuotteet.map((tuote) => {
+						if (tuote.fields.luokka === true && showProducts === 'all') {
 							return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
+						} else {
+							if (tuote.fields.alaluokka === showProducts) {
+								return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
+							}
 						}
-					}
-				})}
+					})}
+				</div>
 			</div>
 		</section>
 	);

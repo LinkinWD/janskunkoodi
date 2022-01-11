@@ -17,56 +17,59 @@ export default function Sidebar({ tuotteet, langat }) {
 					<GrClose />
 				</button>
 			</div>
-			<div className={styled.main} />
-			<button
-				className={styled.sidebarbtn}
-				onClick={() => {
-					setShowProducts('all');
-					closeSidebar();
-				}}
-			>
-				Näytä kaikki
-			</button>
-			{tuotteet.map((tuote) => {
-				const { alaluokka, luokka } = tuote.fields;
-				if (luokka && langat === true) {
-					alaluokat.push(alaluokka);
-					if (uniikitLangat.indexOf(alaluokka) === -1) {
-						uniikitLangat.push(alaluokka);
-						return (
-							<button
-								className={styled.sidebarbtn}
-								onClick={() => {
-									setShowProducts(alaluokka);
-									closeSidebar();
-								}}
-								key={tuote.sys.id}
-							>
-								{alaluokka}
-							</button>
-						);
+			<div className={styled.main}>
+				<button
+					className={styled.sidebarbtn}
+					onClick={() => {
+						setShowProducts('all');
+						closeSidebar();
+					}}
+				>
+					Näytä kaikki
+				</button>
+				{tuotteet.map((tuote) => {
+					const { alaluokka, luokka } = tuote.fields;
+					if (luokka && langat === true) {
+						alaluokat.push(alaluokka);
+						if (uniikitLangat.indexOf(alaluokka) === -1) {
+							uniikitLangat.push(alaluokka);
+							return (
+								<div>
+									<button
+										className={styled.sidebarbtn}
+										onClick={() => {
+											setShowProducts(alaluokka);
+											closeSidebar();
+										}}
+										key={tuote.sys.id}
+									>
+										{alaluokka}
+									</button>
+								</div>
+							);
+						}
 					}
-				}
-				if (!luokka && langat === false) {
-					alaluokat.push(alaluokka);
+					if (!luokka && langat === false) {
+						alaluokat.push(alaluokka);
 
-					if (uniikitMuut.indexOf(alaluokka) === -1) {
-						uniikitMuut.push(alaluokka);
-						return (
-							<button
-								className={styled.sidebarbtn}
-								onClick={() => {
-									setShowProducts(alaluokka);
-									closeSidebar();
-								}}
-								key={tuote.sys.id}
-							>
-								{alaluokka}
-							</button>
-						);
+						if (uniikitMuut.indexOf(alaluokka) === -1) {
+							uniikitMuut.push(alaluokka);
+							return (
+								<button
+									className={styled.sidebarbtn}
+									onClick={() => {
+										setShowProducts(alaluokka);
+										closeSidebar();
+									}}
+									key={tuote.sys.id}
+								>
+									{alaluokka}
+								</button>
+							);
+						}
 					}
-				}
-			})}
+				})}
+			</div>
 		</div>
 	);
 }
