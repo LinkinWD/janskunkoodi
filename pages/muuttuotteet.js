@@ -23,9 +23,10 @@ export async function getStaticProps() {
 }
 
 export default function muuttuotteet({ tuotteet }) {
-	const { openSidebar, isSidebarOpen, showProducts, setShowProducts } = useGlobalContext();
+	const { openSidebar, isSidebarOpen, showProducts, setShowProducts, closeSidebar } = useGlobalContext();
 	useEffect(() => {
 		setShowProducts('all');
+		closeSidebar();
 	}, []);
 	return (
 		<div>
@@ -45,7 +46,7 @@ export default function muuttuotteet({ tuotteet }) {
 			</div>
 			<div className={styled.tuotteet}>
 				{tuotteet.map((tuote) => {
-					if (tuote.fields.luokka === false) {
+					if (tuote.fields.luokka === false && showProducts === 'all') {
 						return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
 					} else {
 						if (tuote.fields.alaluokka === showProducts) {

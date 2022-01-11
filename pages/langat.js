@@ -23,10 +23,11 @@ export async function getStaticProps() {
 }
 
 export default function langat({ tuotteet }) {
-	const { openSidebar, isSidebarOpen, setShowProducts, showProducts } = useGlobalContext();
+	const { openSidebar, isSidebarOpen, setShowProducts, showProducts, closeSidebar } = useGlobalContext();
 
 	useEffect(() => {
 		setShowProducts('all');
+		closeSidebar();
 	}, []);
 
 	return (

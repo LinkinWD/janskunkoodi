@@ -8,6 +8,7 @@ export default function Sidebar({ tuotteet, langat }) {
 	const alaluokat = [];
 	const uniikitLangat = [];
 	const uniikitMuut = [];
+
 	return (
 		<div className={styled.sidebar}>
 			<div className={styled.header}>
@@ -17,7 +18,13 @@ export default function Sidebar({ tuotteet, langat }) {
 				</button>
 			</div>
 			<div className={styled.main} />
-			<button className={styled.sidebarbtn} onClick={() => setShowProducts('all')}>
+			<button
+				className={styled.sidebarbtn}
+				onClick={() => {
+					setShowProducts('all');
+					closeSidebar();
+				}}
+			>
 				Näytä kaikki
 			</button>
 			{tuotteet.map((tuote) => {
@@ -29,7 +36,10 @@ export default function Sidebar({ tuotteet, langat }) {
 						return (
 							<button
 								className={styled.sidebarbtn}
-								onClick={() => setShowProducts(alaluokka)}
+								onClick={() => {
+									setShowProducts(alaluokka);
+									closeSidebar();
+								}}
 								key={tuote.sys.id}
 							>
 								{alaluokka}
@@ -43,7 +53,14 @@ export default function Sidebar({ tuotteet, langat }) {
 					if (uniikitMuut.indexOf(alaluokka) === -1) {
 						uniikitMuut.push(alaluokka);
 						return (
-							<button className={styled.sidebarbtn} key={tuote.sys.id}>
+							<button
+								className={styled.sidebarbtn}
+								onClick={() => {
+									setShowProducts(alaluokka);
+									closeSidebar();
+								}}
+								key={tuote.sys.id}
+							>
 								{alaluokka}
 							</button>
 						);
