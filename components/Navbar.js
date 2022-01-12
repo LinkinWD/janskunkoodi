@@ -8,6 +8,10 @@ import styled from '../styles/navbar.module.css';
 export default function Navbar() {
 	const [ toggleMenu, setToggleMenu ] = useState(false);
 
+	const handleClick = () => {
+		setToggleMenu(false);
+	};
+
 	return (
 		<nav className={styled.navbar}>
 			<div className={styled.brand}>
@@ -23,42 +27,58 @@ export default function Navbar() {
 				<ul className={styled.navbarlist}>
 					<li className={styled.li}>
 						<Link href="/">
-							<a className={styled.a}>Etusivu</a>
+							<a onClick={handleClick} className={styled.a}>
+								Etusivu
+							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
 						<Link href="/langat">
-							<a className={styled.a}>Langat</a>
+							<a onClick={handleClick} className={styled.a}>
+								Langat
+							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
 						<Link href="/muuttuotteet">
-							<a className={styled.a}>Muut tuotteet</a>
+							<a onClick={handleClick} className={styled.a}>
+								Muut tuotteet
+							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
 						<Link href="/ompelupalvelut">
-							<a className={styled.a}>Ompelupalvelut</a>
+							<a onClick={handleClick} className={styled.a}>
+								Ompelupalvelut
+							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
 						<Link href="/pesulapalvelut">
-							<a className={styled.a}>Pesulapalvelut</a>
+							<a onClick={handleClick} className={styled.a}>
+								Pesulapalvelut
+							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
 						<Link href="/esittely">
-							<a className={styled.a}>Esittely</a>
+							<a onClick={handleClick} className={styled.a}>
+								Esittely
+							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
 						<Link href="/verkkokauppa">
-							<a className={styled.a}>Verkkokauppa</a>
+							<a onClick={handleClick} className={styled.a}>
+								Verkkokauppa
+							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
 						<Link href="/otayhteytta">
-							<a className={styled.a}>Ota yhteyttä</a>
+							<a onClick={handleClick} className={styled.a}>
+								Ota yhteyttä
+							</a>
 						</Link>
 					</li>
 				</ul>

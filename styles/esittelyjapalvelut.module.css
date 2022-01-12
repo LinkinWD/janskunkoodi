@@ -4,7 +4,15 @@
 	justify-content: space-evenly;
 	align-items: center;
 	flex-wrap: wrap;
+	color: var(--oakcolor);
+	padding: 1em;
+}
+.paragraf {
+	margin-top: 0.5em;
 }
 .div {
 	max-width: 500px;
+}
+.a {
+	color: var(--janskunpunainen);
 }

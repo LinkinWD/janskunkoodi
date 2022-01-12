@@ -15,7 +15,9 @@ export default function pesulapalvelut() {
 					<Image src="/images/muut/vista.jpg" width={419} height={279} alt="vistanlogo" />
 				</div>
 				<div className={styled.div}>
-					<p>Meiltä saat myös pesulapalveluja - voit pesettää lähes kaikki kodin tekstiilit, kutem esim.</p>
+					<p className={styled.paragraf}>
+						Meiltä saat myös pesulapalveluja - voit pesettää lähes kaikki kodin tekstiilit, kutem esim.
+					</p>
 					<ul>
 						<li>Vuodetekstiilit (myös untuvaiset)</li>
 						<li>Vuodevaatteet ja päiväpeitteet</li>
@@ -23,14 +25,18 @@ export default function pesulapalvelut() {
 						<li>Vesipestävät verhot ja matot</li>
 						<li>Takit</li>
 					</ul>
-					<p>
+					<p className={styled.paragraf}>
 						Jätä pestävät tuotteet viimeistään torstaina, niin saat ne perjantaina lähtevään pesulakuormaan.
 						Puhtaat voi noutaa viikon kuluttua, matot ja nahkatakit 2-3 viikon kuluttua.
 					</p>
-					<p>Lisäksi tarjolla on pöytäliinojen ja liinavaatetekstiilien vuokrauspalvelua.</p>
-					<p>
+					<p className={styled.paragraf}>
+						Lisäksi tarjolla on pöytäliinojen ja liinavaatetekstiilien vuokrauspalvelua.
+					</p>
+					<p className={styled.paragraf}>
 						Pesulapalvelut ja tekstiilien vuokrauksen toteuttaa{' '}
-						<a href="http://vistanpesula.fi/">Vistan pesula</a>
+						<a className={styled.a} href="http://vistanpesula.fi/">
+							Vistan pesula
+						</a>
 					</p>
 				</div>
 			</article>

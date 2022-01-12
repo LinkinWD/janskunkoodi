@@ -15,15 +15,15 @@ export default function ompelupalvelut() {
 					<Image src="/images/muut/ompelu.jfif" width={419} height={279} alt="ompelukuva" />
 				</div>
 				<div className={styled.div}>
-					<p>
+					<p className={styled.paragraf}>
 						Teen kaikenlaiset korjausompelut ammattitaidolla. Käytössäni on useita ompelukoneita, jotka
 						mahdollistavat myös paksumpien kankaiden ompelun, kuten sohvatyynyt. Teen myös korjausompelua.
 					</p>
-					<p>
+					<p className={styled.paragraf}>
 						Tyypillisimpiä korjausompelutöitä ovat lahkeiden lyhennykset, vetoketjun vaihdot takkeihin sekä
 						housuihin, verhojen ompelut ja lyhennykset sekä erilaiset tilaustyöt.
 					</p>
-					<p>Esimerkkihintoja</p>
+					<p className={styled.paragraf}>Esimerkkihintoja</p>
 					<ul>
 						<li>
 							<p>lahkeiden lyhennykset alkaen 12 €</p>
