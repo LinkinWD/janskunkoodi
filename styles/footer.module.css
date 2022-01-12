@@ -12,11 +12,14 @@
 .div {
 	text-align: center;
 	font-size: 1.5rem;
+	color: var(--oakcolor);
+	font-weight: 700;
 }
 .imagediv {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	margin-top: 10px;
 }
 
 @media only screen and (max-width: 800px) {

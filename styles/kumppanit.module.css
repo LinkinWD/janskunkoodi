@@ -13,14 +13,20 @@
 	margin: auto;
 	overflow: hidden;
 	width: auto;
+	border-top: 2px solid var(--oakcolor);
+	border-bottom: 2px solid var(--oakcolor);
+	margin-bottom: 1em;
 }
 .slider .slidertrack {
 	animation: scroll 40s linear infinite;
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: calc(250px * 16);
 	background-color: white;
 }
 .slider .slide {
 	height: 100px;
 	width: 250px;
+	margin-top: 12px;
 }

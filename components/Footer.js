@@ -1,5 +1,6 @@
 import styled from '../styles/footer.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
 	return (
@@ -7,8 +8,12 @@ export default function Footer() {
 			<div className={styled.div}>
 				<p>Janskun Lanka ja Ompelupaja</p>
 				<div className={styled.imagediv}>
-					<Image src="/images/icons/fb_icon.png" height={40} width={40} />
-					<Image src="/images/icons/insta_icon.png" height={40} width={40} />
+					<Link href="https://www.facebook.com/Janskunlanka">
+						<Image src="/images/icons/fb_icon.png" height={40} width={40} />
+					</Link>
+					<Link href={'https://www.instagram.com/janskunlanka/?hl=fi'}>
+						<Image src="/images/icons/insta_icon.png" height={40} width={40} />
+					</Link>
 				</div>
 			</div>
 			<div className={styled.div}>
