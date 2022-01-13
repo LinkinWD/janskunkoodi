@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import CtaBtn from '../components/CtaBtn';
 import Slider from '../components/Slider';
+import KumppanitSlider from '../components/KumppanitSlider';
 
 export default function Home() {
 	return (
@@ -12,6 +13,7 @@ export default function Home() {
 			<div>
 				<Slider />
 				<CtaBtn />
+				<KumppanitSlider />
 			</div>
 		</div>
 	);

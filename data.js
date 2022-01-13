@@ -18,7 +18,7 @@ export const palvelutJaTuotteet = [
 		link: '/ompelupalvelut'
 	},
 	{
-		id: 1,
+		id: 4,
 		title: 'Pesulapalvelut',
 		img: '/images/muut/vista.jpg',
 		link: '/pesulapalvelut'
