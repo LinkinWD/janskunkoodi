@@ -12,7 +12,10 @@ export default function ompelupalvelut() {
 			<Otsikko otsikko={'Ompelupalvelut'} />
 			<article className={styled.article}>
 				<div className={styled.div}>
-					<Image src="/images/muut/ompelukuva.jpg" width={619} height={429} alt="ompelukuva" />
+					<video autoPlay loop style={{ width: '500px', height: '450px' }}>
+						<source src="/images/muut/video.mp4" type="video/mp4" />
+						{/* Video kuvaajalta cottonbro palvelusta Pexels */}
+					</video>
 				</div>
 				<div className={styled.div}>
 					<p className={styled.paragraf}>
