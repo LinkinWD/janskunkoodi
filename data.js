@@ -8,7 +8,7 @@ export const palvelutJaTuotteet = [
 	{
 		id: 2,
 		title: 'Muut tuotteet',
-		img: '/images/muut/langat.jpg',
+		img: '/images/muut/muuttuoutteet.jpg',
 		link: '/muuttuotteet'
 	},
 	{
@@ -20,7 +20,7 @@ export const palvelutJaTuotteet = [
 	{
 		id: 4,
 		title: 'Pesulapalvelut',
-		img: '/images/muut/vista.jpg',
+		img: '/images/muut/vistakuva.png',
 		link: '/pesulapalvelut'
 	}
 ];

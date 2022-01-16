@@ -9,6 +9,13 @@
 }
 .paragraf {
 	margin-top: 0.5em;
+	font-size: 1.2rem;
+}
+.li {
+	list-style: circle;
+	margin-left: 2em;
+	line-height: 1.4;
+	font-style: italic;
 }
 .div {
 	max-width: 500px;

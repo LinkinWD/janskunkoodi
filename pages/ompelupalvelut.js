@@ -12,7 +12,7 @@ export default function ompelupalvelut() {
 			<Otsikko otsikko={'Ompelupalvelut'} />
 			<article className={styled.article}>
 				<div className={styled.div}>
-					<Image src="/images/muut/ompelu.jfif" width={419} height={279} alt="ompelukuva" />
+					<Image src="/images/muut/ompelukuva.jpg" width={619} height={429} alt="ompelukuva" />
 				</div>
 				<div className={styled.div}>
 					<p className={styled.paragraf}>
@@ -25,15 +25,9 @@ export default function ompelupalvelut() {
 					</p>
 					<p className={styled.paragraf}>Esimerkkihintoja</p>
 					<ul>
-						<li>
-							<p>lahkeiden lyhennykset alkaen 12 €</p>
-						</li>
-						<li>
-							<p>vetoketjun vaihto alkaen 25 €</p>
-						</li>
-						<li>
-							<p>verhojen lyhennykset alkaen 12 € /verho</p>
-						</li>
+						<li className={styled.li}>Lahkeiden lyhennykset alkaen 12 €</li>
+						<li className={styled.li}>Vetoketjun vaihto alkaen 25 €</li>
+						<li className={styled.li}>Verhojen lyhennykset alkaen 12 € /verho</li>
 					</ul>
 				</div>
 			</article>

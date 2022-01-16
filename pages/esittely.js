@@ -12,7 +12,7 @@ export default function esittely() {
 			<Otsikko otsikko={'Esittely'} />
 			<article className={styled.article}>
 				<div className={styled.div}>
-					<Image src="/images/muut/Janskukuva.jpg" width={428} height={321} alt="jaanan kuva" />
+					<Image src="/images/muut/Janskukuva.jpg" width={728} height={621} alt="jaanan kuva" />
 				</div>
 				<div className={styled.div}>
 					<p className={styled.paragraf}>

@@ -36,6 +36,7 @@ export default function Sidebar({ tuotteet, langat }) {
 							return (
 								<div>
 									<button
+										key={alaluokka}
 										className={styled.sidebarbtn}
 										onClick={() => {
 											setShowProducts(alaluokka);

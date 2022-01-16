@@ -12,18 +12,18 @@ export default function pesulapalvelut() {
 			<Otsikko otsikko={'Pesulapalvelut'} />
 			<article className={styled.article}>
 				<div className={styled.div}>
-					<Image src="/images/muut/vista.jpg" width={419} height={279} alt="vistanlogo" />
+					<Image src="/images/muut/vistakuva.png" width={619} height={529} alt="vistanlogo" />
 				</div>
 				<div className={styled.div}>
 					<p className={styled.paragraf}>
 						Meiltä saat myös pesulapalveluja - voit pesettää lähes kaikki kodin tekstiilit, kutem esim.
 					</p>
 					<ul>
-						<li>Vuodetekstiilit (myös untuvaiset)</li>
-						<li>Vuodevaatteet ja päiväpeitteet</li>
-						<li>Pöytäliinat ja pyyhkeet, pikkupyykki</li>
-						<li>Vesipestävät verhot ja matot</li>
-						<li>Takit</li>
+						<li className={styled.li}>Vuodetekstiilit (myös untuvaiset)</li>
+						<li className={styled.li}>Vuodevaatteet ja päiväpeitteet</li>
+						<li className={styled.li}>Pöytäliinat ja pyyhkeet, pikkupyykki</li>
+						<li className={styled.li}>Vesipestävät verhot ja matot</li>
+						<li className={styled.li}>Takit</li>
 					</ul>
 					<p className={styled.paragraf}>
 						Jätä pestävät tuotteet viimeistään torstaina, niin saat ne perjantaina lähtevään pesulakuormaan.

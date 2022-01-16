@@ -19,6 +19,9 @@ export default function Footer() {
 			<div className={styled.div}>
 				<p>Kauppakatu 2, 30100 Forssa</p>
 				<p>Avoinna ma-pe 9-17, la 9-14</p>
+				<Link href={'https://www.contentful.com'}>
+					<Image src={'/images/logo/contentful.png'} width={200} height={40} alt="Powered by Contentful" />
+				</Link>
 			</div>
 
 			<div className={styled.div}>

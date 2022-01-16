@@ -77,7 +77,7 @@ export default function Navbar() {
 					<li className={styled.li}>
 						<Link href="/otayhteytta">
 							<a onClick={handleClick} className={styled.a}>
-								Ota yhteyttä
+								Tule käymään
 							</a>
 						</Link>
 					</li>

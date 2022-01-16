@@ -10,7 +10,7 @@ export default function Tuotekortti({ tuote }) {
 			<p className={styled.luokka}>Luokka: {alaluokka}</p>
 			<p>Valmistaja: {valmistaja}</p>
 			<p className={styled.selostus}>{selostus}</p>
-			{luokka ? <p>Puikkosuositus: {puikkosuositus}</p> : ''}
+			{luokka ? <p>Puikkosuositus: {puikkosuositus}</p> : null}
 		</article>
 	);
 }
