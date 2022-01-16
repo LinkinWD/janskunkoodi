@@ -39,6 +39,7 @@ section {
 	width: 20%;
 	min-width: 300px;
 	opacity: 0.3;
+	z-index: -5;
 }
 
 .tuotteet {
