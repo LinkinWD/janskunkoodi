@@ -36,25 +36,27 @@ export default function langat({ tuotteet }) {
 				<title>Langat</title>
 			</Head>
 			<Otsikko otsikko={'Langat'} />
-			<div className={styled.btncontainer}>
-				<button className={styled.btn} onClick={openSidebar}>
-					Järjestele luokkia
-				</button>
-			</div>
-			<div className={styled.tuotteetsivu}>
-				<div className={`${isSidebarOpen ? styled.auki : styled.kiinni} ${styled.sidebar}`}>
-					<Sidebar tuotteet={tuotteet} langat={true} />
+			<div className={styled.container}>
+				<div className={styled.btncontainer}>
+					<button className={styled.btn} onClick={openSidebar}>
+						Järjestele luokkia
+					</button>
 				</div>
-				<div className={styled.tuotteet}>
-					{tuotteet.map((tuote) => {
-						if (tuote.fields.luokka === true && showProducts === 'all') {
-							return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
-						} else {
-							if (tuote.fields.alaluokka === showProducts) {
+				<div className={styled.tuotteetsivu}>
+					<div className={`${isSidebarOpen ? styled.auki : styled.kiinni} ${styled.sidebar}`}>
+						<Sidebar tuotteet={tuotteet} langat={true} />
+					</div>
+					<div className={styled.tuotteet}>
+						{tuotteet.map((tuote) => {
+							if (tuote.fields.luokka === true && showProducts === 'all') {
 								return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
+							} else {
+								if (tuote.fields.alaluokka === showProducts) {
+									return <Tuotekortti key={tuote.sys.id} tuote={tuote} />;
+								}
 							}
-						}
-					})}
+						})}
+					</div>
 				</div>
 			</div>
 		</section>

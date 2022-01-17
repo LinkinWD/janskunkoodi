@@ -2,6 +2,7 @@ import { useGlobalContext } from '../context';
 import { GrClose } from 'react-icons/gr';
 
 import styled from '../styles/sidebar.module.css';
+import Link from 'next/link';
 
 export default function Sidebar({ tuotteet, langat }) {
 	const { closeSidebar, setShowProducts } = useGlobalContext();
@@ -71,6 +72,10 @@ export default function Sidebar({ tuotteet, langat }) {
 					}
 				})}
 			</div>
+			<br />
+			<button className={styled.sidebarbtn} onClick={() => window.scrollTo(0, 0)}>
+				Lopeta selaus
+			</button>
 		</div>
 	);
 }
