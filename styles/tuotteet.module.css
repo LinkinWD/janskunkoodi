@@ -59,10 +59,13 @@
 @media only screen and (min-width: 1200px) {
 	.btncontainer {
 		display: none;
+		position: relative;
 	}
 	.sidebar {
 		position: relative;
 		height: auto;
+		top: 0;
+		z-index: 0;
 	}
 	.kiinni {
 		transform: translateX(0%);

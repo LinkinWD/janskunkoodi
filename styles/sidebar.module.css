@@ -48,6 +48,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
+		position: static;
 	}
 	.header {
 		display: none;
@@ -62,5 +63,8 @@
 		width: auto;
 		background: transparent;
 		margin: 0 4px;
+	}
+	.piilota {
+		display: none;
 	}
 }

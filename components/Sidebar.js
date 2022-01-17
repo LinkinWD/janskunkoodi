@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useGlobalContext } from '../context';
 import { GrClose } from 'react-icons/gr';
 
@@ -5,10 +6,17 @@ import styled from '../styles/sidebar.module.css';
 import Link from 'next/link';
 
 export default function Sidebar({ tuotteet, langat }) {
-	const { closeSidebar, setShowProducts } = useGlobalContext();
+	const { closeSidebar, setShowProducts, showProducts } = useGlobalContext();
 	const alaluokat = [];
 	const uniikitLangat = [];
 	const uniikitMuut = [];
+
+	useEffect(
+		() => {
+			window.scrollTo(0, 0);
+		},
+		[ showProducts ]
+	);
 
 	return (
 		<div className={styled.sidebar}>
@@ -61,6 +69,7 @@ export default function Sidebar({ tuotteet, langat }) {
 									className={styled.sidebarbtn}
 									onClick={() => {
 										setShowProducts(alaluokka);
+
 										closeSidebar();
 									}}
 									key={tuote.sys.id}
@@ -73,8 +82,14 @@ export default function Sidebar({ tuotteet, langat }) {
 				})}
 			</div>
 			<br />
-			<button className={styled.sidebarbtn} onClick={() => window.scrollTo(0, 0)}>
-				Lopeta selaus
+			<button
+				className={`${styled.sidebarbtn} ${styled.piilota}`}
+				onClick={() => {
+					window.scrollTo(0, 0);
+					closeSidebar();
+				}}
+			>
+				Palaa ylös
 			</button>
 		</div>
 	);
