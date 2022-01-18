@@ -1,24 +1,24 @@
 export const palvelutJaTuotteet = [
 	{
-		id: 1,
+		id: 'yksi',
 		title: 'Langat',
 		img: '/images/muut/langat.jpg',
 		link: '/langat'
 	},
 	{
-		id: 2,
+		id: 'kaksi',
 		title: 'Muut tuotteet',
 		img: '/images/muut/muuttuoutteet.jpg',
 		link: '/muuttuotteet'
 	},
 	{
-		id: 3,
+		id: 'kolme',
 		title: 'Ompelupalvelut',
 		img: '/images/muut/ompelu.jfif',
 		link: '/ompelupalvelut'
 	},
 	{
-		id: 4,
+		id: 'nelja',
 		title: 'Pesulapalvelut',
 		img: '/images/muut/vistakuva.png',
 		link: '/pesulapalvelut'

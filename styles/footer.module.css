@@ -1,32 +1,38 @@
 .footer {
 	color: var(--janskunpunainen);
-
 	min-height: 200px;
 	line-height: 1.8rem;
 	background: rgb(255, 226, 89);
 	background: linear-gradient(230deg, rgba(255, 226, 89, 1) 7%, rgba(255, 167, 81, 1) 28%);
+	height: auto;
+	font-size: 1.5rem;
 }
 .firma {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 	flex-wrap: wrap;
+	height: 100%;
 }
 .div {
 	text-align: center;
-	font-size: 1.5rem;
 	color: var(--oakcolor);
 	font-weight: 700;
+	margin-top: 2em;
+	height: 50px;
+}
+.div:last-child {
+	margin-bottom: 1em;
 }
 .imagediv {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	margin-top: 10px;
+	padding-top: 10px;
 }
 .contentful {
 	align-items: center;
-	padding-bottom: 1em;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -35,14 +41,15 @@
 
 @media only screen and (max-width: 800px) {
 	.footer p {
-		font-size: 1rem;
+		font-size: 1.2rem;
 
 		line-height: 1.4rem;
 	}
 	.div {
 		margin-top: 1em;
 	}
-	.div:last-child {
-		margin-bottom: 1em;
+
+	.contentful {
+		padding-bottom: 4em;
 	}
 }

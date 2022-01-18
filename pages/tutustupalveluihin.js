@@ -6,7 +6,7 @@ import styled from '../styles/tutustupalveluihin.module.css';
 
 export default function tutustupalveluihin() {
 	return (
-		<section>
+		<section className={styled.section}>
 			<Head>
 				<title>Palvelut ja tuotteet</title>
 			</Head>

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { GiSewingNeedle } from 'react-icons/gi';
 
 import Image from 'next/image';

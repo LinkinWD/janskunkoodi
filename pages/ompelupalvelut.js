@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Otsikko from '../components/Otsikko';
-import Image from 'next/image';
+
 import styled from '../styles/esittelyjapalvelut.module.css';
 
 export default function ompelupalvelut() {
@@ -14,7 +14,6 @@ export default function ompelupalvelut() {
 				<div className={styled.div}>
 					<video autoPlay loop style={{ width: '500px', height: '450px' }}>
 						<source src="/images/muut/video.mp4" type="video/mp4" />
-						{/* Video kuvaajalta cottonbro palvelusta Pexels */}
 					</video>
 				</div>
 				<div className={styled.div}>
