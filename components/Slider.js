@@ -25,13 +25,7 @@ export default function Slider() {
 					transitionTime={600}
 				>
 					<div>
-						<Image
-							src="/images/sliderimages/sliderImage1.jpg"
-							alt="kuva"
-							importace="high"
-							width={2000}
-							height={600}
-						/>
+						<Image src="/images/sliderimages/sliderImage1.jpg" alt="kuva" width={2000} height={600} />
 					</div>
 					<div>
 						<Image src="/images/sliderimages/sliderImage2.jpg" alt="kuva" width={2000} height={600} />
@@ -72,13 +66,7 @@ export default function Slider() {
 					transitionTime={600}
 				>
 					<div>
-						<Image
-							src="/images/sliderimages/mobileImage1.jpg"
-							alt="kuva"
-							importace="high"
-							width={640}
-							height={853}
-						/>
+						<Image src="/images/sliderimages/mobileImage1.jpg" alt="kuva" width={640} height={853} />
 					</div>
 					<div>
 						<Image src="/images/sliderimages/mobileImage2.jpg" alt="kuva" width={640} height={853} />

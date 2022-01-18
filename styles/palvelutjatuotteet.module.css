@@ -2,7 +2,7 @@
 	background-color: var(--janskunvaaleanpunainen);
 	width: 300px;
 	height: 100px;
-	margin: 1em;
+	margin: 0.5em 1em;
 	border-radius: 1rem;
 	display: flex;
 	justify-content: center;
@@ -12,6 +12,8 @@
 	border: 2px solid var(--janskunpunainen);
 	animation-name: animaatio;
 	animation-duration: 1.5s;
+	text-transform: capitalize;
+	transition: var(--transition);
 }
 @keyframes animaatio {
 	0% {
@@ -25,11 +27,14 @@
 	.article {
 		height: 20vh;
 	}
+	.article:hover {
+		transform: translateY(-10px);
+	}
 }
 
 @media only screen and (min-width: 1100px) {
 	.article {
 		width: 30vw;
-		height: 30vh;
+		height: 25vh;
 	}
 }
