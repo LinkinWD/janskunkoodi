@@ -5,7 +5,7 @@ import styled from '../styles/palvelutjatuotteet.module.css';
 export default function PalvelutJaTuotteet({ data }) {
 	const { title, img, link, id } = data;
 	return (
-		<Link href={link}>
+		<Link href={link} passHref>
 			<article className={styled.article}>
 				{/* <div className={styled.imagewrapper}>
 					<Image src={img} width={350} height={270} alt="palvelutkuva" />
