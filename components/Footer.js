@@ -9,11 +9,11 @@ export default function Footer() {
 				<div className={styled.div}>
 					<p>Janskun Lanka ja Ompelupaja</p>
 					<div className={styled.imagediv}>
-						<Link href="https://www.facebook.com/Janskunlanka">
-							<Image src="/images/icons/fb_icon.png" height={40} width={40} />
+						<Link href="https://www.facebook.com/Janskunlanka" passHref>
+							<Image src="/images/icons/fb_icon.png" height={40} width={40} alt="fb link" />
 						</Link>
-						<Link href={'https://www.instagram.com/janskunlanka/?hl=fi'}>
-							<Image src="/images/icons/insta_icon.png" height={40} width={40} />
+						<Link href={'https://www.instagram.com/janskunlanka/?hl=fi'} passHref>
+							<Image src="/images/icons/insta_icon.png" height={40} width={40} alt="instagram link" />
 						</Link>
 					</div>
 				</div>
@@ -29,7 +29,7 @@ export default function Footer() {
 			</div>
 			<div className={styled.contentful}>
 				<p>Powered by</p>
-				<Link href={'https://www.contentful.com'}>
+				<Link href={'https://www.contentful.com'} passHref>
 					<Image src={'/images/logo/contentful.png'} width={150} height={30} alt="Powered by Contentful" />
 				</Link>
 			</div>

@@ -1,13 +1,24 @@
 import styled from '../styles/kauppakortti.module.css';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addProduct } from '../redux/cartSlice';
 
 export default function KauppaKortti({ tuote, hinta }) {
 	const [ totalPrice, setTotalPrice ] = useState(0);
-
+	const dispatch = useDispatch();
+	const [ quantity, setQuantity ] = useState(0);
 	const handleChance = (e) => {
 		let arvo = e.target.value;
 		setTotalPrice(arvo * hinta);
+		setQuantity(arvo);
+	};
+	const handleClick = (e) => {
+		e.preventDefault();
+		if (quantity === 0) {
+			return;
+		}
+		dispatch(addProduct({ ...tuote, hinta, quantity }));
 	};
 
 	return (
@@ -27,7 +38,9 @@ export default function KauppaKortti({ tuote, hinta }) {
 				/>
 				<p>Yhteensä:{totalPrice}€</p>
 				<Image src={tuote.img} width={50} height={50} alt={tuote.color} />
-				<button type="submit">Lisää ostoskoriin</button>
+				<button onClick={handleClick} type="submit">
+					Lisää ostoskoriin
+				</button>
 			</form>
 		</div>
 	);
