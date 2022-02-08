@@ -25,7 +25,7 @@ export default function TuoteTiedot({ lanka }) {
 	);
 }
 export const getServerSideProps = async ({ params }) => {
-	const res = await axios.get(`http://localhost:3000/api/langat/${params.id}`);
+	const res = await axios.get(`${process.env.SERVER_URL}/api/langat/${params.id}`);
 	return {
 		props: {
 			lanka: res.data
