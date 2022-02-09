@@ -16,7 +16,7 @@ export default function verkkokauppa({ langat }) {
 	);
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const res = await axios.get(`${process.env.SERVER_URL}/api/langat`);
 	return {
 		props: {
