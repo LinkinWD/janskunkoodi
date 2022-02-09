@@ -4,10 +4,11 @@ import KauppaKortti from '../../components/KauppaKortti';
 import styled from '../../styles/tuote.module.css';
 
 export const getServerSideProps = async ({ params }) => {
-	const res = await axios.get(`${process.env.SERVER_URL}/api/langat/${params.id}`);
+	const res = await fetch(`${process.env.SERVER_URL}/api/langat/${params.id}`);
+	const data = await res.json();
 	return {
 		props: {
-			lanka: res.data
+			lanka: data
 		}
 	};
 };

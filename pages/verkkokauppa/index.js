@@ -1,17 +1,8 @@
 import Head from 'next/head';
 import Otsikko from '../../components/Otsikko';
-import axios from 'axios';
+
 import Verkkokauppakortti from '../../components/Verkkokauppakortti';
 import VerkkokauppaLista from '../../components/VerkkokauppaLista';
-
-export const getServerSideProps = async () => {
-	const res = await axios.get(`${process.env.SERVER_URL}/api/langat`);
-	return {
-		props: {
-			langat: res.data
-		}
-	};
-};
 
 export default function verkkokauppa({ langat }) {
 	return (
@@ -24,3 +15,12 @@ export default function verkkokauppa({ langat }) {
 		</div>
 	);
 }
+export const getServerSideProps = async () => {
+	const res = await fetch(`${process.env.SERVER_URL}/api/langat`);
+	const data = await res.json();
+	return {
+		props: {
+			langat: data
+		}
+	};
+};
