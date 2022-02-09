@@ -4,7 +4,7 @@ import axios from 'axios';
 import Verkkokauppakortti from '../../components/Verkkokauppakortti';
 import VerkkokauppaLista from '../../components/VerkkokauppaLista';
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 	const res = await axios.get(`${process.env.SERVER_URL}/api/langat`);
 	return {
 		props: {

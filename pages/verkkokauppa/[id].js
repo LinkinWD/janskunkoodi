@@ -3,20 +3,7 @@ import Image from 'next/image';
 import KauppaKortti from '../../components/KauppaKortti';
 import styled from '../../styles/tuote.module.css';
 
-export const getStaticPaths = async () => {
-	const res = await axios.get(`${process.env.SERVER_URL}/api/langat`);
-
-	const paths = res.data.map((tuote) => {
-		return {
-			params: { id: tuote._id.toString() }
-		};
-	});
-	return {
-		paths: paths,
-		fallback: false
-	};
-};
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
 	const res = await axios.get(`${process.env.SERVER_URL}/api/langat/${params.id}`);
 	return {
 		props: {
