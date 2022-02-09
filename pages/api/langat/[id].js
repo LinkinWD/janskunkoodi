@@ -2,7 +2,7 @@ import dbConnect from '../../../utils/mongo';
 import Langat from '../../../models/Langat';
 
 export default async function handler(req, res) {
-	dbConnect();
+	await dbConnect();
 
 	const { method, query: { id } } = req;
 
