@@ -45,7 +45,9 @@ export default function cart() {
 			</div>
 			<div className={styled.oikea}>
 				<h3>Ostosten hinta yhteensä: {cart.total} €</h3>
-				<button>Osta</button>
+				<Link href="/osta">
+					<button>Osta</button>
+				</Link>
 			</div>
 			<Link href="/verkkokauppa">
 				<button>Pataa verkkokauppaan</button>
