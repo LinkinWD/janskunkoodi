@@ -26,8 +26,8 @@ export default function pesulapalvelut() {
 						<li className={styled.li}>Takit</li>
 					</ul>
 					<p className={styled.paragraf}>
-						Jätä pestävät tuotteet viimeistään torstaina, niin saat ne perjantaina lähtevään pesulakuormaan.
-						Puhtaat voi noutaa viikon kuluttua, matot ja nahkatakit 2-3 viikon kuluttua.
+						Jätä pestävät tuotteet viimeistään torstaina, niin saat ne seuraavana tiistaina lähtevään
+						pesulakuormaan. Puhtaat voi noutaa viikon kuluttua, matot ja nahkatakit 2-3 viikon kuluttua.
 					</p>
 					<p className={styled.paragraf}>
 						Lisäksi tarjolla on pöytäliinojen ja liinavaatetekstiilien vuokrauspalvelua.

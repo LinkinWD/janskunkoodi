@@ -1,4 +1,4 @@
-import axios from 'axios';
+import Link from 'next/link';
 import Image from 'next/image';
 import KauppaKortti from '../../components/KauppaKortti';
 import styled from '../../styles/tuote.module.css';
@@ -31,6 +31,9 @@ export default function TuoteTiedot({ lanka }) {
 					return <KauppaKortti key={index} tuote={tuote} hinta={lanka.price} />;
 				})}
 			</div>
+			<Link href="/osta">
+				<button>Siirry maksamaan</button>
+			</Link>
 		</article>
 	);
 }
