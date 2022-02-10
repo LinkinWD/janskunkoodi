@@ -44,10 +44,10 @@ export default function verkkokauppa({ langat }) {
 
 			<Otsikko otsikko={'Verkkokauppa'} />
 			<div className={styled.btnwrapper}>
-				<button onClick={() => handleModal('ehdot')} className={styled.btn}>
+				<button onClick={() => handleModal('ehdot')} className="generalbtn">
 					Osto ja toimitusehdot
 				</button>
-				<button onClick={() => handleModal('kirjaudu')} className={styled.btn}>
+				<button onClick={() => handleModal('kirjaudu')} className="generalbtn">
 					Kirjaudu
 				</button>
 			</div>

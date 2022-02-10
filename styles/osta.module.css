@@ -1,0 +1,28 @@
+.container {
+	padding: 1rem;
+}
+.label {
+	font-size: 1.2rem;
+}
+.input {
+	font-size: 1.3rem;
+	padding: 2px;
+	width: 100%;
+	margin-bottom: 0.4em;
+}
+.check {
+	width: 35px;
+	height: 35px;
+	margin-left: 10px;
+}
+.checkwrapper {
+	margin-top: 10px;
+	height: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header {
+	margin-bottom: 1em;
+	text-align: center;
+}

@@ -91,16 +91,6 @@ export default function Navbar() {
 							</a>
 						</Link>
 					</li>
-					<li className={styled.li}>
-						<Link href="/cart" passHref>
-							<a onClick={handleClick}>
-								<button className={styled.btn}>
-									<BsCart4 className={styled.cart} />
-									<span className={styled.span}>{quantity}</span>
-								</button>
-							</a>
-						</Link>
-					</li>
 				</ul>
 			</div>
 		</nav>

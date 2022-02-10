@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 
 loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
+import styled from '../styles/osta.module.css';
+
 export default function osta() {
 	const router = useRouter();
 	const { success, canceled } = router.query;
@@ -26,29 +28,60 @@ export default function osta() {
 	);
 
 	return (
-		<div>
-			<h2>Toimitusosoite, sekä tilaajan puhelinnumero ja sähköposti</h2>
+		<div className={styled.container}>
+			<h2 className={styled.header}>Toimitusosoite, sekä tilaajan puhelinnumero ja sähköposti</h2>
 			<form action="/api/checkout_sessions" method="POST">
-				<label htmlFor="name">Koko nimi</label>
-				<input type="text" id="name" name="name" />
-				<label htmlFor="osoite">Lähiosoite</label>
-				<input type="text" id="osoite" name="osoite" />
-				<label htmlFor="posti">Postinumero</label>
-				<input type="text" id="posti" name="posti" />
-				<label htmlFor="kaupunki">Kaupunki</label>
-				<input type="text" id="kaupunki" name="kaupunki" />
-				<label htmlFor="puhelin">Puhelin numero</label>
-				<input type="text" id="puhelin" name="puhelin" />
-				<label htmlFor="email" />
-				<input type="text" name="email" id="email" />
-				<label htmlFor="check">Olen lukenut osto toimitus ehdot</label>
-				<input type="checkbox" name="check" id="check" />
-				<button type="submit" role="link">
-					Siiry maksamaan
+				<label className={styled.label} htmlFor="name">
+					Koko nimi
+				</label>
+				<br />
+				<input className={styled.input} type="text" id="name" name="name" />
+				<br />
+				<label className={styled.label} htmlFor="osoite">
+					Lähiosoite
+				</label>
+				<br />
+				<input className={styled.input} type="text" id="osoite" name="osoite" />
+				<br />
+				<label className={styled.label} htmlFor="posti">
+					Postinumero
+				</label>
+				<br />
+				<input className={styled.input} type="text" id="posti" name="posti" />
+				<br />
+				<label className={styled.label} htmlFor="kaupunki">
+					Kaupunki
+				</label>
+				<br />
+				<input className={styled.input} type="text" id="kaupunki" name="kaupunki" />
+				<br />
+				<label className={styled.label} htmlFor="puhelin">
+					Puhelin numero
+				</label>
+				<br />
+
+				<input className={styled.input} type="text" id="puhelin" name="puhelin" />
+				<br />
+				<label className={styled.label} htmlFor="email">
+					Sähköposti
+				</label>
+				<br />
+				<input className={styled.input} type="text" name="email" id="email" />
+				<br />
+				<div className={styled.checkwrapper}>
+					<label className={styled.label} htmlFor="check">
+						Olen lukenut ja hyvksynyt osto ja toimitus ehdot
+					</label>
+					<input className={styled.check} type="checkbox" name="check" id="check" />
+				</div>
+				<br />
+
+				<button className="generalbtn" type="submit" role="link">
+					Siirry maksamaan
 				</button>
 			</form>
-			<Link href="/verkkokauppa">
-				<button>Palaa verkkokauppaan</button>
+			<Link href="/cart">
+				<button className="generalbtn">Palaa ostoskoriin</button>
 			</Link>
 		</div>
 	);
