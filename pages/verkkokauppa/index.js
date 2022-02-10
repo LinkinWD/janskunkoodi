@@ -4,7 +4,7 @@ import Otsikko from '../../components/Otsikko';
 import VerkkokauppaLista from '../../components/VerkkokauppaLista';
 import { AiOutlineCloseSquare } from 'react-icons/ai';
 import styled from '../../styles/verkkokauppa.module.css';
-import Ehdot from '../../components/ehdot';
+import Ehdot from '../../components/Ehdot';
 
 export const getServerSideProps = async () => {
 	const res = await fetch(`${process.env.SERVER_URL}/api/langat`);
