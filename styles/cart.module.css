@@ -7,3 +7,8 @@
 .th {
 	width: 20%;
 }
+.btn {
+	padding: 5px 20px;
+	font-size: 1.5rem;
+	margin: 10px;
+}

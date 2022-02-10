@@ -8,13 +8,20 @@ export default async function handler(req, res) {
 				line_items: [
 					{
 						// Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-						price: 100,
+						price_data: {
+							currency: 'eur',
+							product_data: {
+								name: 'Joku lanka vaan'
+							},
+							unit_amount: 6.9 * 100
+						},
 						quantity: 1
 					}
 				],
+				payment_method_types: [ 'card' ],
 				mode: 'payment',
-				success_url: `${req.headers.origin}/?success=true`,
-				cancel_url: `${req.headers.origin}/?canceled=true`
+				success_url: `${process.env.SERVER_URL}/verkkokauppa/success`,
+				cancel_url: `${process.env.SERVER_URL}/verkkokauppa/canceled`
 			});
 			res.redirect(303, session.url);
 		} catch (err) {
