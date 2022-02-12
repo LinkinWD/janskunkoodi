@@ -1,8 +1,20 @@
 import axios from 'axios';
 import styled from '../../styles/admin.module.css';
 import Image from 'next/image';
+import { useState } from 'react';
 
-export default function index({ langat, tilaukset }) {
+export default function Index({ langat, tilaukset }) {
+	const [ tuoteLista, setTuoteLista ] = useState(langat);
+	const [ tilausLista, setTilausLista ] = useState(tilaukset);
+
+	const handleDelete = async (id) => {
+		try {
+			const res = await axios.delete(`${process.env.SERVER_URL}/api/langat/` + id);
+			setTuoteLista(tuoteLista.filter((tuote) => tuote._id !== id));
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	return (
 		<div className={styled.container}>
 			<section>
@@ -13,7 +25,7 @@ export default function index({ langat, tilaukset }) {
 							<h4>{lanka.title}</h4>
 							<h4>{lanka.price}</h4>
 							<button>Muuta hintaa</button>
-							<button>Poista koko tuote</button>
+							<button onClick={() => handleDelete(lanka._id)}>Poista koko tuote</button>
 							<table>
 								<thead>
 									<tr>
@@ -24,7 +36,7 @@ export default function index({ langat, tilaukset }) {
 								</thead>
 
 								<tbody>
-									{lanka.supply.map((tuote, index) => {
+									{tuoteLista.map((tuote, index) => {
 										return (
 											<tr key={index}>
 												<td>{tuote.color}</td>

@@ -24,8 +24,8 @@ export default async function handler(req, res) {
 	}
 	if (method === 'DELETE') {
 		try {
-			const lanka = await Langat.create(req.body);
-			res.status(201).json(lanka);
+			await Langat.findByIdAndDelete(id);
+			res.status(200).json('deleted');
 		} catch (err) {
 			res.status(500).json(err);
 		}
