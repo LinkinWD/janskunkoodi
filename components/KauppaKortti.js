@@ -25,7 +25,8 @@ export default function KauppaKortti({ tuote, hinta }) {
 		<div className={styled.container}>
 			<form action="" className={styled.form}>
 				<label>{tuote.color}</label>
-				<label htmlFor="number">Määrä</label>
+				<Image src={tuote.img} width={50} height={50} alt={tuote.color} />
+				<label htmlFor="number">Kpl</label>
 				<input
 					type="number"
 					name="number"
@@ -36,8 +37,8 @@ export default function KauppaKortti({ tuote, hinta }) {
 					className={styled.input}
 					onChange={(e) => handleChance(e)}
 				/>
-				<p>Yhteensä:{totalPrice}€</p>
-				<Image src={tuote.img} width={50} height={50} alt={tuote.color} />
+				<p>Hinta:{totalPrice}€</p>
+
 				<button onClick={handleClick} type="submit">
 					Lisää ostoskoriin
 				</button>
