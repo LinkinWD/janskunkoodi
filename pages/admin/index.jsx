@@ -2,6 +2,7 @@ import axios from 'axios';
 import styled from '../../styles/admin.module.css';
 import Image from 'next/image';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Index({ langat, tilaukset }) {
 	const [ tuoteLista, setTuoteLista ] = useState(langat);
@@ -9,8 +10,9 @@ export default function Index({ langat, tilaukset }) {
 
 	const handleDelete = async (id) => {
 		try {
-			const res = await axios.delete(`${process.env.SERVER_URL}/api/langat/` + id);
+			const res = await axios.delete(`http://localhost:3000/api/langat/` + id);
 			setTuoteLista(tuoteLista.filter((tuote) => tuote._id !== id));
+			console.log(tuoteLista)
 		} catch (error) {
 			console.log(error);
 		}
@@ -18,8 +20,11 @@ export default function Index({ langat, tilaukset }) {
 	return (
 		<div className={styled.container}>
 			<section>
+				<Link href='/admin/new'><button>Lisää uusi tuote</button>
+				</Link>
+				
 				<h2>Tuotteet</h2>
-				{langat.map((lanka) => {
+				{tuoteLista.map((lanka) => {
 					return (
 						<div key={lanka._id}>
 							<h4>{lanka.title}</h4>
@@ -91,7 +96,17 @@ export default function Index({ langat, tilaukset }) {
 	);
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
+	const myCookie = ctx.req?.cookies || ""
+
+	if(myCookie.token !== process.env.TOKEN){
+		return {
+			redirect: {
+				destination:"/verkkokauppa",
+				permanent:false
+			}
+		}
+	}
 	const langatRes = await axios.get(`${process.env.SERVER_URL}/api/langat`);
 	// const tilauksetRes = await axios.get(`${process.env.SERVER_URL}/api/tilaukset`);
 
