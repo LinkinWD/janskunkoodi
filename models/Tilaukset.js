@@ -30,6 +30,15 @@ const TilauksetSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 			maxlength: 15
+		},
+		orders: {
+			type: [
+				{
+					color: { type: String, required: true },
+					stock: { type: Number, required: true },
+					price: { type: Number, required: true }
+				}
+			]
 		}
 	},
 	{ timestamps: true }

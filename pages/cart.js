@@ -2,14 +2,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import Image from 'next/image';
 import styled from '../styles/cart.module.css';
 import Link from 'next/link';
-import { useState } from 'react';
+
+//testifilet
 
 export default function cart() {
 	const dispatch = useDispatch();
 	const cart = useSelector((state) => state.cart);
-	const [ totalPrice, setTotalPrice ] = useState(0);
 
-	const laskeHinta = (quantity, hinta) => setTotalPrice(hinta * quantity + totalPrice);
+	/* const laskeHinta = (quantity, hinta) => setTotalPrice(hinta * quantity + totalPrice); */
 	return (
 		<div className={styled.container}>
 			<h2>Ostoskorisi</h2>

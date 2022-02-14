@@ -1,5 +1,5 @@
-import React from 'react';
+import { useGlobalContext } from '../../context';
 
 export default function success() {
-	return <div>success</div>;
+	return <div>succeesss</div>;
 }

@@ -1,15 +1,21 @@
 import Link from 'next/link';
-import { loadStripe } from '@stripe/stripe-js';
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 
-loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 
 import styled from '../styles/osta.module.css';
 
-export default function osta() {
+import { loadStripe } from '@stripe/stripe-js';
+import { useEffect } from 'react';
+
+loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+
+export default function Osta() {
 	const router = useRouter();
 	const { success, canceled } = router.query;
+	const cart = useSelector((state) => state.cart);
+	const data = cart.total;
+
 	useEffect(
 		() => {
 			// Check to see if this is a redirect back from Checkout
@@ -30,6 +36,7 @@ export default function osta() {
 	return (
 		<div className={styled.container}>
 			<h2 className={styled.header}>Toimitusosoite, sekä tilaajan puhelinnumero ja sähköposti</h2>
+
 			<form action="/api/checkout_sessions" method="POST">
 				<label className={styled.label} htmlFor="name">
 					Koko nimi
@@ -68,6 +75,7 @@ export default function osta() {
 				<br />
 				<input className={styled.input} type="text" name="email" id="email" />
 				<br />
+
 				<div className={styled.checkwrapper}>
 					<label className={styled.label} htmlFor="check">
 						Olen lukenut ja hyvksynyt osto ja toimitus ehdot
@@ -76,9 +84,13 @@ export default function osta() {
 				</div>
 				<br />
 
-				<button className="generalbtn" type="submit" role="link">
-					Siirry maksamaan
-				</button>
+				<input hidden name="summa" value={data} />
+
+				{data > 0 && (
+					<button className="generalbtn" type="submit" role="link">
+						Siirry maksamaan
+					</button>
+				)}
 			</form>
 			<Link href="/cart">
 				<button className="generalbtn">Palaa ostoskoriin</button>

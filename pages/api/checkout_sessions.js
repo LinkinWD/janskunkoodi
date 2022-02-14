@@ -2,7 +2,8 @@ const stripe = require('stripe')(
 	'sk_test_51KQXSgCySnwVAZQKd12pe0pVojMHsiAPItn2HeGNTC82EFzIWW6RXPJGQv2pY7qX8g6a2omH5QacV4TPqFyix4BM005cW2KfOk'
 );
 
-export default async function handler(req, res) {
+export default async function Handler(req, res) {
+	const hinta = req.body.summa;
 	if (req.method === 'POST') {
 		try {
 			// Create Checkout Sessions from body params.
@@ -13,9 +14,9 @@ export default async function handler(req, res) {
 						price_data: {
 							currency: 'eur',
 							product_data: {
-								name: 'Joku lanka vaan'
+								name: 'Hinta yhteensä:'
 							},
-							unit_amount: 6.9 * 100
+							unit_amount: hinta * 100
 						},
 						quantity: 1
 					}
