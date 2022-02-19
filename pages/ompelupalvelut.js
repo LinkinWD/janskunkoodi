@@ -19,7 +19,8 @@ export default function ompelupalvelut() {
 				<div className={styled.div}>
 					<p className={styled.paragraf}>
 						Teen kaikenlaiset korjausompelut ammattitaidolla. Käytössäni on useita ompelukoneita, jotka
-						mahdollistavat myös paksumpien kankaiden ompelun, kuten sohvatyynyt. Teen myös korjausompelua.
+						mahdollistavat myös paksumpien kankaiden ompelun, kuten sohvatyynyt. Teen myös alihankinta
+						ompelua.
 					</p>
 					<p className={styled.paragraf}>
 						Tyypillisimpiä korjausompelutöitä ovat lahkeiden lyhennykset, vetoketjun vaihdot takkeihin sekä

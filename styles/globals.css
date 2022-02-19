@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Euphoria+Script&family=Permanent+Marker&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
+	--serpent: rgb(174, 178, 165);
 	--janskunpunainen: #ff0c00;
 	--janskunvaaleanpunainen: #fcddec;
 	--transition: 0.3s all;
@@ -22,8 +23,7 @@ a {
 	text-decoration: none;
 }
 body {
-	background: rgb(255, 226, 89);
-	background: linear-gradient(230deg, rgba(255, 226, 89, 1) 7%, rgba(255, 167, 81, 1) 28%, rgba(255, 226, 89, 1) 90%);
+	background-color: white;
 	background-position: center;
 	background-repeat: no-repeat;
 

@@ -1,7 +1,8 @@
 import Head from 'next/head';
-import CtaBtn from '../components/CtaBtn';
+import styled from '../styles/ctabtn.module.css';
 import Slider from '../components/Slider';
 import KumppanitSlider from '../components/KumppanitSlider';
+import Link from 'next/link';
 
 export default function Home() {
 	return (
@@ -12,7 +13,13 @@ export default function Home() {
 			</Head>
 			<div>
 				<Slider />
-				<CtaBtn />
+				<div className={styled.btncontainer}>
+					<Link href="/tutustupalveluihin">
+						<button className={styled.btn}>
+							<span>Tutustu palveluihin ja valikoimaamme</span>
+						</button>
+					</Link>
+				</div>
 				<KumppanitSlider />
 			</div>
 		</div>

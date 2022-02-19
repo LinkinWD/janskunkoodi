@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import { GiSewingNeedle } from 'react-icons/gi';
-import { BsCart4 } from 'react-icons/bs';
-import { useSelector } from 'react-redux';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from '../styles/navbar.module.css';
 
 export default function Navbar() {
 	const [ toggleMenu, setToggleMenu ] = useState(false);
-	const quantity = useSelector((state) => state.cart.quantity);
 
 	const handleClick = () => {
 		setToggleMenu(false);
@@ -22,12 +20,6 @@ export default function Navbar() {
 					<span>Janskun lanka ja ompelupaja</span>
 				</div>
 				<div className={styled.btnwrapper}>
-					<Link href="/cart" passHref>
-						<button className={styled.btn}>
-							<BsCart4 className={styled.cart} />
-							<span className={styled.span}>{quantity}</span>
-						</button>
-					</Link>
 					<button className={styled.btn} onClick={() => setToggleMenu(!toggleMenu)}>
 						<GiSewingNeedle className={styled.icon} />
 					</button>
@@ -77,13 +69,7 @@ export default function Navbar() {
 							</a>
 						</Link>
 					</li>
-					<li className={styled.li}>
-						<Link href="/verkkokauppa" passHref>
-							<a onClick={handleClick} className={styled.a}>
-								Verkkokauppa
-							</a>
-						</Link>
-					</li>
+
 					<li className={styled.li}>
 						<Link href="/otayhteytta" passHref>
 							<a onClick={handleClick} className={styled.a}>

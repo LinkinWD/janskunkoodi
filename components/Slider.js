@@ -66,9 +66,6 @@ export default function Slider() {
 					transitionTime={600}
 				>
 					<div>
-						<Image src="/images/sliderimages/mobileImage1.jpg" alt="kuva" width={640} height={853} />
-					</div>
-					<div>
 						<Image src="/images/sliderimages/mobileImage2.jpg" alt="kuva" width={640} height={853} />
 					</div>
 					<div>

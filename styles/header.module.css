@@ -5,3 +5,7 @@
 	color: var(--janskunpunainen);
 	font-family: 'Euphoria Script', cursive;
 }
+.hr {
+	margin-top: 5px;
+	border: 2px solid var(--janskunpunainen);
+}

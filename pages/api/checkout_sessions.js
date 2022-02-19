@@ -21,6 +21,12 @@ export default async function Handler(req, res) {
 						quantity: 1
 					}
 				],
+				shipping_address_collection: {
+					allowed_countries: [ 'FI' ]
+				},
+				phone_number_collection: {
+					enabled: true
+				},
 				payment_method_types: [ 'card' ],
 				mode: 'payment',
 				success_url: `${process.env.SERVER_URL}/verkkokauppa/success`,

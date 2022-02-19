@@ -13,8 +13,8 @@
 	margin: auto;
 	overflow: hidden;
 	width: auto;
-	border-top: 2px solid var(--oakcolor);
-	border-bottom: 2px solid var(--oakcolor);
+	border-top: 2px solid var(--janskunpunainen);
+	border-bottom: 2px solid var(--janskunpunainen);
 	margin-bottom: 1em;
 }
 .slider .slidertrack {

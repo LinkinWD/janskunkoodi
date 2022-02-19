@@ -55,7 +55,7 @@
 .li {
 	width: 100%;
 	text-align: center;
-	background-color: var(--janskunvaaleanpunainen);
+	background-color: var(white);
 	margin: 1px 0;
 	padding: 5px 0;
 	cursor: pointer;

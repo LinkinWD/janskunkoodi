@@ -2,8 +2,7 @@
 	color: var(--janskunpunainen);
 	min-height: 200px;
 	line-height: 1.8rem;
-	background: rgb(255, 226, 89);
-	background: linear-gradient(230deg, rgba(255, 226, 89, 1) 7%, rgba(255, 167, 81, 1) 28%);
+	background-color: white;
 	height: auto;
 	font-size: 1.5rem;
 }
