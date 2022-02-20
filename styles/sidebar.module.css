@@ -6,8 +6,7 @@
 	align-items: center;
 	flex-direction: column;
 	padding: 1em;
-	background: rgb(255, 226, 89);
-	background: radial-gradient(circle, rgba(255, 226, 89, 1) 7%, rgba(255, 167, 81, 1) 32%, rgba(255, 226, 89, 1) 90%);
+	background-color: white;
 	z-index: 21;
 	height: 100%;
 	border: 1px solid var(--janskunpunainen);
@@ -29,17 +28,28 @@
 	font-size: 1.2rem;
 	border: none;
 	margin: 2px 0;
-	background-color: orange;
+	background-color: white;
 	width: 100%;
-	padding: 5px 0;
+	padding: 5px 10px;
 	color: var(--janskunpunainen);
 	cursor: pointer;
+	border-radius: 2px;
+	background: #ffffff;
+	box-shadow: 6px 6px 12px #e3e3e3, -6px -6px 12px #ffffff;
+}
+.sidebarbtn:focus {
+	border-radius: 2px;
+	background: #ffffff;
+	box-shadow: inset 6px 6px 12px #e3e3e3, inset -6px -6px 12px #ffffff;
 }
 .closebtn {
 	display: inline-block;
 	font-size: 1.4rem;
 	background-color: var(--janskunpunainen);
-	color: white;
+	padding: 5px;
+	border-radius: 50%;
+	display: flex;
+	cursor: pointer;
 }
 @media only screen and (min-width: 1200px) {
 	.sidebar {
@@ -63,6 +73,10 @@
 		width: auto;
 		background: transparent;
 		margin: 0 4px;
+		transition: var(--transition);
+	}
+	.sidebarbtn:hover {
+		transform: scale(1.08);
 	}
 	.piilota {
 		display: none;

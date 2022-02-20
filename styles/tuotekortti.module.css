@@ -1,10 +1,10 @@
 .card {
 	height: 420px;
 	width: 300px;
-	background: rgba(174, 178, 165, 0.6);
+	background: var(--serpent);
 	display: inline-block;
 	padding: 1em;
-	border-radius: 2em;
+	border-radius: 10px;
 	z-index: 1;
 	position: relative;
 	backdrop-filter: blur(10px);
@@ -12,10 +12,9 @@
 	background-clip: padding-box;
 	box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
 	margin: 2em;
-	color: var(--oakcolor);
+	color: black;
 }
 .title {
-	color: var(--oakcolor);
 	text-transform: capitalize;
 	text-align: center;
 	margin-bottom: 0.8rem;

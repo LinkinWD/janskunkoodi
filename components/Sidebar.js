@@ -28,6 +28,7 @@ export default function Sidebar({ tuotteet, langat }) {
 			</div>
 			<div className={styled.main}>
 				<button
+					key={1}
 					className={styled.sidebarbtn}
 					onClick={() => {
 						setShowProducts('all');
@@ -43,7 +44,7 @@ export default function Sidebar({ tuotteet, langat }) {
 						if (uniikitLangat.indexOf(alaluokka) === -1) {
 							uniikitLangat.push(alaluokka);
 							return (
-								<div>
+								<div key={tuote.sys.id}>
 									<button
 										key={alaluokka}
 										className={styled.sidebarbtn}
@@ -51,7 +52,6 @@ export default function Sidebar({ tuotteet, langat }) {
 											setShowProducts(alaluokka);
 											closeSidebar();
 										}}
-										key={tuote.sys.id}
 									>
 										{alaluokka}
 									</button>
@@ -72,7 +72,6 @@ export default function Sidebar({ tuotteet, langat }) {
 
 										closeSidebar();
 									}}
-									key={tuote.sys.id}
 								>
 									{alaluokka}
 								</button>

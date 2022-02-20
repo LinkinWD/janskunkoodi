@@ -9,10 +9,10 @@ export default function Footer() {
 				<div className={styled.div}>
 					<p>Janskun Lanka ja Ompelupaja</p>
 					<div className={styled.imagediv}>
-						<Link href="https://www.facebook.com/Janskunlanka" passHref>
+						<Link href="https://www.facebook.com/Janskunlanka">
 							<Image src="/images/icons/fb_icon.png" height={40} width={40} alt="fb link" />
 						</Link>
-						<Link href={'https://www.instagram.com/janskunlanka/?hl=fi'} passHref>
+						<Link href={'https://www.instagram.com/janskunlanka/?hl=fi'}>
 							<Image src="/images/icons/insta_icon.png" height={40} width={40} alt="instagram link" />
 						</Link>
 					</div>
