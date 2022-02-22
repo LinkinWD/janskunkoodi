@@ -1,10 +1,12 @@
 import styled from '../styles/footer.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import Hr from './Hr';
 
 export default function Footer() {
 	return (
 		<footer className={styled.footer}>
+			<Hr />
 			<div className={styled.firma}>
 				<div className={styled.div}>
 					<p>Janskun Lanka ja Ompelupaja</p>
