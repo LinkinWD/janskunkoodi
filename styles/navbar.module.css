@@ -42,7 +42,7 @@
 
 .esille {
 	transition: 1s all;
-	height: 15em;
+	height: 18em;
 }
 .piilossa {
 	height: 0;
@@ -62,7 +62,6 @@
 	transition: var(--transition);
 	border-radius: 2px;
 	background: #ffffff;
-	box-shadow: 9px 9px 18px #e3e3e3, -9px -9px 18px #ffffff;
 }
 .a {
 	color: var(--janskunpunainen);
@@ -116,5 +115,8 @@
 	}
 	.li {
 		background: none;
+	}
+	.a {
+		font-size: 1rem;
 	}
 }

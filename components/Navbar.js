@@ -28,42 +28,49 @@ export default function Navbar() {
 			<div className={`${toggleMenu ? styled.esille : styled.piilossa} ${styled.links}`}>
 				<ul className={styled.navbarlist}>
 					<li className={styled.li}>
-						<Link href="/" passHref>
+						<Link href="/">
 							<a onClick={handleClick} className={styled.a}>
 								Etusivu
 							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
-						<Link href="/langat" passHref>
+						<Link href="/langat">
 							<a onClick={handleClick} className={styled.a}>
 								Langat
 							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
-						<Link href="/muuttuotteet" passHref>
+						<Link href="/muuttuotteet">
 							<a onClick={handleClick} className={styled.a}>
 								Muut tuotteet
 							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
-						<Link href="/ompelupalvelut" passHref>
+						<Link href="/ompelupalvelut">
 							<a onClick={handleClick} className={styled.a}>
 								Ompelupalvelut
 							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
-						<Link href="/pesulapalvelut" passHref>
+						<Link href="/pesulapalvelut">
 							<a onClick={handleClick} className={styled.a}>
 								Pesulapalvelut
 							</a>
 						</Link>
 					</li>
 					<li className={styled.li}>
-						<Link href="/esittely" passHref>
+						<Link href="/kauppa">
+							<a onClick={handleClick} className={styled.a}>
+								Verkkokauppa
+							</a>
+						</Link>
+					</li>
+					<li className={styled.li}>
+						<Link href="/esittely">
 							<a onClick={handleClick} className={styled.a}>
 								Esittely
 							</a>
@@ -71,7 +78,7 @@ export default function Navbar() {
 					</li>
 
 					<li className={styled.li}>
-						<Link href="/otayhteytta" passHref>
+						<Link href="/otayhteytta">
 							<a onClick={handleClick} className={styled.a}>
 								Tule käymään
 							</a>
