@@ -79,7 +79,8 @@
 }
 .span {
 	position: absolute;
-	background-color: white;
+	background-color: var(--janskunpunainen);
+	color: white;
 	padding: 4px;
 	font-size: 1rem;
 	right: -10px;

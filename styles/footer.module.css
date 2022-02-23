@@ -30,6 +30,9 @@
 	align-items: center;
 	padding-top: 10px;
 }
+.icon {
+	cursor: pointer;
+}
 .contentful {
 	align-items: center;
 	margin-bottom: 2em;

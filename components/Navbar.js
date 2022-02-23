@@ -1,13 +1,14 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { GiSewingNeedle } from 'react-icons/gi';
-
+import { BsCart } from 'react-icons/bs';
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from '../styles/navbar.module.css';
 
 export default function Navbar() {
 	const [ toggleMenu, setToggleMenu ] = useState(false);
-
+	const quantity = useSelector((state) => state.cart.quantity);
 	const handleClick = () => {
 		setToggleMenu(false);
 	};
@@ -19,7 +20,14 @@ export default function Navbar() {
 					<Image src="/images/logo/logosvg.svg" width={40} height={40} alt="Jantskun lanka" />
 					<span>Janskun lanka ja ompelupaja</span>
 				</div>
+
 				<div className={styled.btnwrapper}>
+					<Link href="/ostoskori">
+						<a className={styled.btn}>
+							<BsCart />
+							<span className={styled.span}>{quantity}</span>
+						</a>
+					</Link>
 					<button className={styled.btn} onClick={() => setToggleMenu(!toggleMenu)}>
 						<GiSewingNeedle className={styled.icon} />
 					</button>
