@@ -1,0 +1,18 @@
+.colorcard {
+	width: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+	background-color: lightblue;
+	margin: 1em;
+}
+.amount {
+	display: flex;
+}
+.partofamount {
+	font-size: 2rem;
+	padding: 0 8px;
+	margin: 4px;
+}

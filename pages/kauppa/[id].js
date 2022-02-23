@@ -2,6 +2,7 @@ import axios from 'axios';
 import Head from 'next/head';
 import Image from 'next/image';
 import ValintaKortti from '../../components/ValintaKortti';
+import styled from '../../styles/tuote.module.css';
 
 export default function tuote({ product }) {
 	const { title, image, price, malf, info } = product;
@@ -21,7 +22,7 @@ export default function tuote({ product }) {
 					})}
 				</div>
 			</div>
-			<div>
+			<div className={styled.colorarea}>
 				{product.selection.map((color, idx) => {
 					return <ValintaKortti key={idx} color={color} product={product} />;
 				})}
