@@ -3,15 +3,38 @@ import Head from 'next/head';
 import Otsikko from '../components/Otsikko';
 import Image from 'next/image';
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { PayPalScriptProvider, PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
-
+import axios from 'axios';
 import styled from '../styles/ostoskori.module.css';
 
 export default function ostoskori() {
-	const amount = '2';
+	let products = [];
+	const dispatch = useDispatch();
+	const cart = useSelector((state) => state.cart);
+	const temp = cart.products.map((product) => {
+		products.push({
+			productName: product.productName,
+			name: product.name,
+			quantity: product.quantity,
+			price: product.price
+		});
+	});
+
 	const currency = 'EUR';
 	const style = { layout: 'vertical' };
-
+	const postikulut = 8;
+	const total = cart.total + postikulut;
+	const amount = total;
+	const router = useRouter();
+	const items = [];
+	const createOrder = async (data) => {
+		try {
+			const res = await axios.post('http://localhost:3000/api/orders', data);
+		} catch (err) {
+			console.log(err);
+		}
+	};
 	const ButtonWrapper = ({ currency, showSpinner }) => {
 		// usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
 		// This is the main reason to wrap the PayPalButtons in a new component
@@ -39,10 +62,24 @@ export default function ostoskori() {
 					forceReRender={[ amount, currency, style ]}
 					fundingSource={undefined}
 					createOrder={(data, actions) => {
+						cart.products.map((product) => {
+							items.push({
+								name: product.name + '-' + product.productName,
+								quantity: product.quantity,
+								unit_amount: {
+									currency_code: currency,
+									value: product.price
+								}
+
+							});
+						});
+						console.log(items)
+						console.log(items);
 						return actions.order
 							.create({
 								purchase_units: [
 									{
+										
 										amount: {
 											currency_code: currency,
 											value: amount
@@ -56,8 +93,16 @@ export default function ostoskori() {
 							});
 					}}
 					onApprove={function(data, actions) {
-						return actions.order.capture().then(function() {
-							// Your code here after capture the order
+						return actions.order.capture().then(function(details) {
+							const shipping = details.purchase_units[0].shipping;
+							createOrder({
+								customer: shipping.name.full_name,
+								address: shipping.address.address_line_1,
+								city: shipping.address.admin_area_2,
+								postal: shipping.address.postal_code,
+								total: total,
+								products: products
+							});
 						});
 					}}
 				/>
@@ -65,10 +110,6 @@ export default function ostoskori() {
 		);
 	};
 
-	const dispatch = useDispatch();
-	const cart = useSelector((state) => state.cart);
-	const postikulut = 8;
-	const total = cart.total + postikulut;
 	return (
 		<div>
 			<Head>
@@ -89,7 +130,7 @@ export default function ostoskori() {
 								/>
 								<p>Väri: {cartitem.name}</p>
 								<p>Määrä: {cartitem.quantity}</p>
-								<p>Hinta yhteensä: {cartitem.price}€</p>
+								<p>Hinta/kpl: {cartitem.price}€</p>
 							</div>
 						);
 					})}
@@ -106,7 +147,7 @@ export default function ostoskori() {
 							<PayPalScriptProvider
 								options={{
 									'client-id':
-										'AYaSjPyWTAW3Y4GU5O-j5wDpU60Scn-F0sedEk64BpjHeH6ci2srhQgYQ-U-OxmHZhaiBPQIs-cOoH1l',
+										'AYbGCfeU-_6XTirA9oOlHTfocyOV776AbnHByBjVUOUEiK5EP1KYWz_dsUSCzyHPdY0R_1YIAB3wHMS4',
 									components: 'buttons',
 									currency: 'EUR'
 								}}
