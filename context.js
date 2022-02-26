@@ -6,20 +6,14 @@ export const AppProvider = ({ children }) => {
 	const [ isSidebarOpen, setIsSidebarOpen ] = useState(false);
 
 	const [ showProducts, setShowProducts ] = useState('all');
-	const openSidebar = () => {
-		setIsSidebarOpen(true);
-	};
-	const closeSidebar = () => {
-		setIsSidebarOpen(false);
-	};
+	const [ isModalOpen, setIsModalOpen ] = useState(false);
+	const [ whatInModal, setWhatInModal ] = useState('');
+	const openSidebar = () => setIsSidebarOpen(true);
+	const closeSidebar = () => setIsSidebarOpen(false);
 
-	const [ name, setName ] = useState('');
-	const [ address, setAdress ] = useState('');
-	const [ postalcode, setPostalcode ] = useState('');
-	const [ city, setCity ] = useState('');
-	const [ email, setEmail ] = useState('');
-	const [ phone, setPhone ] = useState('');
-	const [ orders, setOrders ] = useState([]);
+	const openModal = () => setIsModalOpen(true);
+	const closeModal = () => setIsModalOpen(false);
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -29,20 +23,12 @@ export const AppProvider = ({ children }) => {
 				closeSidebar,
 				showProducts,
 				setShowProducts,
-				name,
-				setName,
-				address,
-				setAdress,
-				postalcode,
-				setPostalcode,
-				city,
-				setCity,
-				email,
-				setEmail,
-				phone,
-				setPhone,
-				orders,
-				setOrders
+				isModalOpen,
+				setIsModalOpen,
+				openModal,
+				closeModal,
+				setWhatInModal,
+				whatInModal
 			}}
 		>
 			{children}

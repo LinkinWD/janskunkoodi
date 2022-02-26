@@ -20,7 +20,7 @@ export default function ostoskori() {
 			price: product.price
 		});
 	});
-
+	
 	const currency = 'EUR';
 	const style = { layout: 'vertical' };
 	const postikulut = 8;
@@ -73,7 +73,7 @@ export default function ostoskori() {
 
 							});
 						});
-						console.log(items)
+						
 						console.log(items);
 						return actions.order
 							.create({
@@ -81,7 +81,7 @@ export default function ostoskori() {
 									{
 										
 										amount: {
-											currency_code: currency,
+											currency_code: 'EUR',currency,
 											value: amount
 										}
 									}
