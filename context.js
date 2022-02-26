@@ -11,8 +11,14 @@ export const AppProvider = ({ children }) => {
 	const openSidebar = () => setIsSidebarOpen(true);
 	const closeSidebar = () => setIsSidebarOpen(false);
 
-	const openModal = () => setIsModalOpen(true);
-	const closeModal = () => setIsModalOpen(false);
+	const openModal = (text) => {
+		setWhatInModal(text);
+		setIsModalOpen(true);
+	};
+	const closeModal = () => {
+		setWhatInModal('');
+		setIsModalOpen(false);
+	};
 
 	return (
 		<AppContext.Provider

@@ -1,6 +1,24 @@
+.div {
+	position: relative;
+	transition: var(--transition);
+}
+
+.btnarea {
+	display: flex;
+}
+
 .wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
+}
+.modalopen {
+	height: auto;
+	width: 400px;
+	min-width: 400px;
+}
+.modalclosed {
+	height: 0;
+	width: 0;
 }

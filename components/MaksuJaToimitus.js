@@ -1,9 +1,11 @@
-import React from 'react';
-
+import { useGlobalContext } from '../context';
+import { AiFillCloseCircle } from 'react-icons/ai';
 export default function MaksuJaToimitus() {
+	const { closeModal } = useGlobalContext();
 	return (
 		<div>
 			<h3>Maksu- ja toimitusehdot</h3>
+			<AiFillCloseCircle onClick={closeModal} />
 			<h5>Maksutavat</h5>
 			<h5>Paypal</h5>
 			<p>Paypal on?</p>
@@ -85,6 +87,9 @@ export default function MaksuJaToimitus() {
 			<h5>Yhteystiedot</h5>
 			<p>- Sähköpostilla osoitteesta janskunlanka(at)gmail.com</p>
 			<p>Puhelimella 050 361 5575</p>
+			<button className="generalbtn" onClick={closeModal}>
+				Sulje
+			</button>
 		</div>
 	);
 }
