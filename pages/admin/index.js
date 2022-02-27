@@ -2,6 +2,7 @@ import Head from 'next/head';
 import axios from 'axios';
 import Otsikko from '../../components/Otsikko';
 import Tilaus from '../../components/Tilaus';
+import Link from 'next/link';
 
 import styled from '../../styles/admin.module.css';
 
@@ -20,7 +21,10 @@ export default function admin({ orderList }) {
 			<Head>
 				<title>Admin hallinta</title>
 			</Head>
-			<Otsikko otsikko={'hallinnointi'} /> <button className="generalbtn">Käsittele tuotteita</button>
+			<Otsikko otsikko={'hallinnointi'} />
+			<Link href="/admin/products">
+				<button className="generalbtn">Käsittele tuotteita</button>
+			</Link>
 			<h2>Tilaukset</h2>
 			{orderList.map((order) => {
 				return <Tilaus key={order._id} order={order} />;

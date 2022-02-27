@@ -5,13 +5,13 @@ import styled from '../styles/kirjaudu.module.css';
 export default function Kirjaudu() {
 	const { closeModal } = useGlobalContext();
 	return (
-		<div>
+		<div className={styled.container}>
 			<h3>Kirjaudu sisään</h3>
 			<AiFillCloseCircle onClick={closeModal} />
 			<form action="">
-				<label for="username">Käytäjänimi</label>
+				<label htmlFor="username">Käytäjänimi</label>
 				<input type="text" name="username" id="username" />
-				<label for="password">Salasana</label>
+				<label htmlFor="password">Salasana</label>
 				<input type="password" name="salasana" id="salasana" />
 			</form>
 		</div>

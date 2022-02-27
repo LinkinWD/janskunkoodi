@@ -11,7 +11,6 @@ export const getServerSideProps = async ({ params }) => {
 };
 
 export default function tilaus({ order }) {
-	const postimaksu = 8.1;
 	return (
 		<div>
 			<div className={styled.container}>
@@ -31,10 +30,10 @@ export default function tilaus({ order }) {
 						</div>
 					);
 				})}
-				<p className={styled.p}>Tuotteet yhteensä: {order.total.toFixed(2)}€</p>
-				<p className={styled.p}>Postimaksu: 8.10€</p>
+
+				<p className={styled.p}>Sisältää postimaksun: 8.10€</p>
 				<p className={styled.p}>
-					<b>Yhteensä: {(order.total + postimaksu).toFixed(2)}€</b>
+					<b>Ostos yhteensä: {order.total.toFixed(2)}€</b>
 				</p>
 				<button className="generalbtn">Merkitse hoidetuksi ja arkistoi</button>
 			</div>
