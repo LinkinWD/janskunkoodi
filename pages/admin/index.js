@@ -3,6 +3,8 @@ import axios from 'axios';
 import Otsikko from '../../components/Otsikko';
 import Tilaus from '../../components/Tilaus';
 
+import styled from '../../styles/admin.module.css';
+
 export const getServerSideProps = async () => {
 	const res = await axios.get(process.env.SERVER_URL + '/api/orders');
 	return {

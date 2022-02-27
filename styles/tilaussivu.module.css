@@ -1,0 +1,15 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 1em;
+}
+.ostetut {
+	display: flex;
+	margin: 1em 0;
+}
+.p {
+	font-size: 1.2rem;
+	margin: 4px;
+}

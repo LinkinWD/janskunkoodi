@@ -1,4 +1,5 @@
 import axios from 'axios';
+import styled from '../../styles/tilaussivu.module.css';
 
 export const getServerSideProps = async ({ params }) => {
 	const res = await axios.get(process.env.SERVER_URL + '/api/orders/' + params.id);
@@ -10,24 +11,32 @@ export const getServerSideProps = async ({ params }) => {
 };
 
 export default function tilaus({ order }) {
+	const postimaksu = 8.1;
 	return (
 		<div>
-			<div>
-				<p>{order.customer}</p>
-				<p>{order.address}</p>
-				<p>{order.postal}</p>
-				<p>{order.city}</p>
-				<p>{order.total}</p>
+			<div className={styled.container}>
+				<p className={styled.p}>Asiakkaan nimi: {order.customer}</p>
+				<p className={styled.p}>Lähiosoite: {order.address}</p>
+				<p className={styled.p}>Postinumero: {order.postal}</p>
+				<p className={styled.p}>Kaupunki: {order.city}</p>
+
+				<p>Ostetut tuotteet</p>
 				{order.products.map((tuote, idx) => {
 					return (
-						<div key={idx}>
-							<p>{tuote.productName}</p>
-							<p>{tuote.name}</p>
-							<p>{tuote.quantity}</p>
-							<p>{tuote.price}</p>
+						<div key={idx} className={styled.ostetut}>
+							<p>Tuote: {tuote.productName}</p>
+							<p>Väri: {tuote.name}</p>
+							<p>Määrä: {tuote.quantity}/kpl</p>
+							<p>Hinta/kpl: {tuote.price.toFixed(2)}€</p>
 						</div>
 					);
 				})}
+				<p className={styled.p}>Tuotteet yhteensä: {order.total.toFixed(2)}€</p>
+				<p className={styled.p}>Postimaksu: 8.10€</p>
+				<p className={styled.p}>
+					<b>Yhteensä: {(order.total + postimaksu).toFixed(2)}€</b>
+				</p>
+				<button className="generalbtn">Merkitse hoidetuksi ja arkistoi</button>
 			</div>
 		</div>
 	);

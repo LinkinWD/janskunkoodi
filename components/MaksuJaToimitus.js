@@ -1,9 +1,11 @@
 import { useGlobalContext } from '../context';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import styled from '../styles/maksujatoimitus.module.css';
+
 export default function MaksuJaToimitus() {
 	const { closeModal } = useGlobalContext();
 	return (
-		<div>
+		<div className={styled.container}>
 			<h3>Maksu- ja toimitusehdot</h3>
 			<AiFillCloseCircle onClick={closeModal} />
 			<h5>Maksutavat</h5>

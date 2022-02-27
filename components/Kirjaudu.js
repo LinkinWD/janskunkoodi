@@ -1,5 +1,6 @@
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { useGlobalContext } from '../context';
+import styled from '../styles/kirjaudu.module.css';
 
 export default function Kirjaudu() {
 	const { closeModal } = useGlobalContext();
