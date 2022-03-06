@@ -30,7 +30,7 @@ export default function ostoskori() {
 	const items = [];
 	const createOrder = async (data) => {
 		try {
-			const res = await axios.post('http://localhost:3000/api/orders', data);
+			const res = await axios.post(process.env.NEXT_PUBLIC_SERVER_URL+'/api/orders', data);
 		} catch (err) {
 			console.log(err);
 		}
@@ -123,7 +123,7 @@ export default function ostoskori() {
 							<div key={idx} className={styled.product}>
 								<h3>Lanka:{cartitem.productName}</h3>
 								<Image
-									src={'/images' + cartitem.image + '.jpg'}
+									src={cartitem.image}
 									height={80}
 									width={100}
 									alt={cartitem.name}
