@@ -20,6 +20,15 @@ export const AppProvider = ({ children }) => {
 		setIsModalOpen(false);
 	};
 
+	//create Product muuttujat
+	const [ title, setTitle ] = useState('');
+	const [ image, setImage ] = useState('');
+	const [ desc, setDesc ] = useState('');
+	const [ price, setPrice ] = useState('');
+	const [ malf, setMalf ] = useState('');
+	const [ info, setInfo ] = useState([]);
+	const [ selection, setSelection ] = useState([]);
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -34,7 +43,21 @@ export const AppProvider = ({ children }) => {
 				openModal,
 				closeModal,
 				setWhatInModal,
-				whatInModal
+				whatInModal,
+				title,
+				setTitle,
+				image,
+				setImage,
+				desc,
+				setDesc,
+				price,
+				setPrice,
+				malf,
+				setMalf,
+				info,
+				setInfo,
+				selection,
+				setSelection
 			}}
 		>
 			{children}

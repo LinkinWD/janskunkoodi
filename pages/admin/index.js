@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import styled from '../../styles/admin.module.css';
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
 	const res = await axios.get(process.env.SERVER_URL + '/api/orders');
 	return {
 		props: {
@@ -22,6 +22,7 @@ export default function admin({ orderList }) {
 				<title>Admin hallinta</title>
 			</Head>
 			<Otsikko otsikko={'hallinnointi'} />
+
 			<Link href="/admin/products">
 				<button className="generalbtn">Käsittele tuotteita</button>
 			</Link>

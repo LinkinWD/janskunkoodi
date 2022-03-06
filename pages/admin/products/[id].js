@@ -1,12 +1,34 @@
-import React from 'react';
+import { useGlobalContext } from '../../../context';
 import axios from 'axios';
 
 export default function product({ product }) {
+	const {
+		title,
+		setTitle,
+		image,
+		setImage,
+		desc,
+		setDesc,
+		price,
+		setPrice,
+		malf,
+		setMalf,
+		info,
+		setInfo,
+		selection,
+		setSelection
+	} = useGlobalContext();
+	setTitle(product.title);
+	setImage(product.image);
+	setDesc(product.desc);
+	setPrice(product.price);
+	setMalf(product.malf);
+
 	return (
 		<div>
 			<h3>tuote</h3>
 			<label htmlFor="title">Tuotteen nimi:</label>
-			<input type="text" name="title" id="title" />
+			<input type="text" name="title" id="title" value={title} onChange={(e) => setTitle(e.target.value)} />
 			<label htmlFor="image">Kuvan osoite:</label>
 			<input type="text" name="image" id="image" />
 			<label htmlFor="desc">Kuva teksti:</label>

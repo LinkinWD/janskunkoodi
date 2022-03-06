@@ -3,7 +3,6 @@ import { useGlobalContext } from '../context';
 import { GrClose } from 'react-icons/gr';
 
 import styled from '../styles/sidebar.module.css';
-import Link from 'next/link';
 
 export default function Sidebar({ tuotteet, langat }) {
 	const { closeSidebar, setShowProducts, showProducts } = useGlobalContext();

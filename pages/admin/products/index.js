@@ -5,6 +5,11 @@ export default function index({ productList }) {
 	return (
 		<div>
 			<h2>Tuotteet</h2>
+			<div>
+				<Link href="/admin/products/new">
+					<a className="generalbtn">Luo uusi</a>
+				</Link>
+			</div>
 			{productList.map((product) => {
 				return (
 					<div>
