@@ -1,3 +1,23 @@
 .colorarea {
 	display: flex;
 }
+.top {
+	text-align: center;
+}
+.title {
+	text-align: center;
+	margin: 1em;
+	font-size: 2rem;
+}
+.malf {
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+.info {
+	margin: 1em;
+}
+.infoparagraph {
+	font-weight: 700;
+	margin: 0.3rem;
+}

@@ -11,6 +11,10 @@
 .amount {
 	display: flex;
 }
+.title {
+	font-size: 1.5rem;
+	font-weight: 700;
+}
 .partofamount {
 	font-size: 2rem;
 	padding: 0 8px;

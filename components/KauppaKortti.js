@@ -10,7 +10,7 @@ export default function({ product }) {
 		<Link href={`/kauppa/${product._id}`}>
 			<article className={styled.kortti}>
 				<h2>{title}</h2>
-				<Image src={`/images${image}.jpg`} height={150} width={200} alt={title} />
+				<Image src={image} height={150} width={200} alt={title} />
 				<p>{desc}</p>
 				<button className="generalbtn">{desimaali}€</button>
 			</article>

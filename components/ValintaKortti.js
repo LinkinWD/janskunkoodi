@@ -28,8 +28,8 @@ export default function ValintaKortti({ product, color }) {
 	};
 	return (
 		<div className={styled.colorcard}>
-			<p>{color.name}</p>
-			<Image src={'/images' + color.image + '.jpg'} height={80} width={100} alt={color.name} />
+			<p className={styled.title}>{color.name}</p>
+			<Image src={color.image} height={80} width={100} alt={color.name} />
 			<p>Varastossa: {color.stock}</p>
 			<p>Hinta: {price} €</p>
 			<p>Määrä:</p>

@@ -11,14 +11,19 @@ export default function tuote({ product }) {
 			<Head>
 				<title>{title}</title>
 			</Head>
-			<div>
-				<h2>{title}</h2>
-				<Image src={'/images' + image + '.jpg'} width={400} height={300} alt={title} />
-				<p>Valmistaja: {malf}</p>
-				<h5>Tuoteselostus:</h5>
+			<div className={styled.top}>
+				<h2 className={styled.title}>{title}</h2>
+				<Image src={image} width={400} height={300} alt={title} />
+
+				<p className={styled.malf}>Valmistaja: {malf}</p>
+				<h2 className={styled.info}>Tuoteselostus:</h2>
 				<div>
 					{info.map((rivi, idx) => {
-						return <p key={idx}>{rivi}</p>;
+						return (
+							<p className={styled.infoparagraph} key={idx}>
+								{rivi}
+							</p>
+						);
 					})}
 				</div>
 			</div>
