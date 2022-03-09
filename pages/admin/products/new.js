@@ -102,33 +102,78 @@ export default function uusi() {
 			</div>
 			<section className={styled.section}>
 				<div className={styled.vasen}>
-					<label htmlFor="title">Tuotteen nimi:</label>
-					<input type="text" name="title" onChange={(e) => setTitle(e.target.value)} id="title" />
+					<label className={styled.label} htmlFor="title">
+						Tuotteen nimi:
+					</label>
+					<input
+						className={styled.input}
+						type="text"
+						name="title"
+						onChange={(e) => setTitle(e.target.value)}
+						id="title"
+					/>
 					<br />
-					<label htmlFor="image">Kuvan osoite:</label>
-					<input type="text" name="image" onChange={(e) => setImage(e.target.value)} id="image" />
+					<label className={styled.label} htmlFor="image">
+						Kuvan osoite:
+					</label>
+					<input
+						className={styled.input}
+						type="text"
+						name="image"
+						onChange={(e) => setImage(e.target.value)}
+						id="image"
+					/>
 					<br />
 					<button onClick={() => setKuva(true)}>Lisää kuva esikatseluun</button>
 					<br />
 
-					<label htmlFor="desc">Kuva teksti:</label>
-					<input type="text" name="desc" onChange={(e) => setDesc(e.target.value)} id="desc" />
+					<label className={styled.label} htmlFor="desc">
+						Kuva teksti:
+					</label>
+					<input
+						className={styled.input}
+						type="text"
+						name="desc"
+						onChange={(e) => setDesc(e.target.value)}
+						id="desc"
+					/>
 					<br />
-					<label htmlFor="price">Tuotteen Hinta:</label>
-					<input type="number" name="price" onChange={(e) => setPrice(e.target.value)} />
+					<label className={styled.label} htmlFor="price">
+						Tuotteen Hinta:
+					</label>
+					<input
+						className={styled.input}
+						type="number"
+						name="price"
+						onChange={(e) => setPrice(e.target.value)}
+					/>
 					<br />
-					<label htmlFor="malf">Tuotteen valmistaja:</label>
-					<input type="text" name="malf" onChange={(e) => setMalf(e.target.value)} />
+					<label className={styled.label} htmlFor="malf">
+						Tuotteen valmistaja:
+					</label>
+					<input className={styled.label} type="text" name="malf" onChange={(e) => setMalf(e.target.value)} />
 					<br />
-					<label htmlFor="info">*Kirjoita rivi tuoteselostusta</label>
-					<br />
-					<input type="text" name="info" onChange={(e) => setInfoLine(e.target.value)} />
-					<br />
-					<button onClick={addInfoLine}>Lisää rivi</button>
-					<br />
-					<label htmlFor="color">Lisää tuotteelle väri myyntiin.</label>
+					<label className={styled.label} htmlFor="info">
+						*Kirjoita rivi tuoteselostusta
+					</label>
 					<br />
 					<input
+						className={styled.input}
+						type="text"
+						name="info"
+						onChange={(e) => setInfoLine(e.target.value)}
+					/>
+					<br />
+					<button className={styled.addbtn} onClick={addInfoLine}>
+						Lisää rivi
+					</button>
+					<br />
+					<label className={styled.label} htmlFor="color">
+						Lisää tuotteelle väri myyntiin.
+					</label>
+					<br />
+					<input
+						className={styled.input}
 						type="colorname"
 						placeholder="Värin nimi/numero"
 						name="name"
@@ -136,6 +181,7 @@ export default function uusi() {
 					/>
 					<br />
 					<input
+						className={styled.input}
 						type="text"
 						placeholder="Värin kuvan osoite"
 						name="img"
@@ -143,12 +189,15 @@ export default function uusi() {
 					/>
 					<br />
 					<input
+						className={styled.input}
 						type="number"
 						placeholder="Montako on varastossa"
 						onChange={(e) => setSelectionStock(e.target.value)}
 					/>
 					<br />
-					<button onClick={addSelection}>Lisää väri myyntiin</button>
+					<button className={styled.addbtn} onClick={addSelection}>
+						Lisää väri myyntiin
+					</button>
 				</div>
 				<div className={styled.oikea}>
 					<p>Tuotteen nimi: {title}</p>

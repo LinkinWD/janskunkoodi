@@ -18,3 +18,12 @@
 	display: flex;
 	justify-content: space-evenly;
 }
+.input {
+	padding: 1px;
+}
+.addbtn {
+	padding: 2px 5px;
+}
+.label {
+	font-size: 1.1rem;
+}
