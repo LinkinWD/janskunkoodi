@@ -1,4 +1,5 @@
 import { useGlobalContext } from '../../../context';
+import Image from 'next/image';
 import axios from 'axios';
 import { useEffect, useState, useRef } from 'react';
 
@@ -85,13 +86,12 @@ export default function product({ product }) {
 				<p>Myynissä olevat värit:</p>
 				{selection.map((product, idx) => {
 					return (
-						<div>
-							<label htmlFor="name">Tuotteen nimi:</label>
-							<input type="text" value={product.name} name="name" />
-							<label htmlFor="image">Kuvan osoite</label>
-							<input type="text" value={product.image} name="image" />
+						<div key={idx}>
+							<p>Nimi:{product.name}</p>
+							<Image src={product.image} width={80} height={80} alt={product.name} />
 							<label htmlFor="stock">Määrä varastossa</label>
 							<input type="number" value={product.stock} name="stock" />
+							<button>Poista väri myynnistä</button>
 						</div>
 					);
 				})}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import axios from 'axios';
+
 import styled from '../../../styles/products.module.css';
 
 export default function index({ productList }) {
