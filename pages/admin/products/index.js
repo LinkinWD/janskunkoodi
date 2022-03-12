@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import axios from 'axios';
+import styled from '../../../styles/products.module.css';
 
 export default function index({ productList }) {
 	return (
-		<div>
+		<div className={styled.container}>
 			<h2>Tuotteet</h2>
 			<div>
 				<Link href="/admin/products/new">

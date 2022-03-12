@@ -1,6 +1,6 @@
 import { useGlobalContext } from '../../../context';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from '../../../styles/uusi.module.css';
 import Image from 'next/image';
 
@@ -17,6 +17,10 @@ export default function uusi() {
 		},
 		[ success ]
 	);
+	const inputRef = useRef();
+	const resetInputValue = () => {
+		inputRef.current.value = '';
+	};
 
 	const {
 		title,
@@ -40,6 +44,7 @@ export default function uusi() {
 	const addInfoLine = () => {
 		setInfo([ ...info, infoLine ]);
 		setInfoLine('');
+		resetInputValue();
 	};
 	const [ selectionName, setSelectionName ] = useState('');
 	const [ selectionImg, setSelectionImg ] = useState('');
@@ -162,6 +167,7 @@ export default function uusi() {
 						type="text"
 						name="info"
 						onChange={(e) => setInfoLine(e.target.value)}
+						ref={inputRef}
 					/>
 					<br />
 					<button className={styled.addbtn} onClick={addInfoLine}>
