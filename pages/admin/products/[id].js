@@ -51,6 +51,11 @@ export default function product({ product }) {
 		setAddText('');
 		resetInputValue();
 	};
+	const setNewQuantity = (index, value) => {
+		let newSelection = [ ...selection ];
+		newSelection[index].stock = value;
+		setSelection(newSelection);
+	};
 
 	return (
 		<div>
@@ -71,7 +76,7 @@ export default function product({ product }) {
 				{info.map((rivi, idx) => {
 					return (
 						<div key={idx}>
-							<input type="text" value={rivi} onChange={(e) => setNewInfo(e, idx)} />
+							<input type="text" value={rivi} onChange={(e) => setNewInfo(e)} />
 
 							<button onClick={() => removeLine(idx)}>Poista rivi</button>
 						</div>
@@ -87,10 +92,15 @@ export default function product({ product }) {
 				{selection.map((product, idx) => {
 					return (
 						<div key={idx}>
-							<p>Nimi:{product.name}</p>
+							<p>Nimi: {product.name}</p>
 							<Image src={product.image} width={80} height={80} alt={product.name} />
 							<label htmlFor="stock">Määrä varastossa</label>
-							<input type="number" value={product.stock} name="stock" />
+							<input
+								type="number"
+								value={product.stock}
+								name="stock"
+								onChange={(e) => setNewQuantity(idx, e.target.value)}
+							/>
 							<button>Poista väri myynnistä</button>
 						</div>
 					);
